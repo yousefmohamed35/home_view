@@ -13,6 +13,13 @@ class HomeView extends StatelessWidget {
       body: Column(
         children: [
           CustomContainerAppBar(),
+          Container(
+            child: Column(
+              children: [
+                
+              ],
+            ),
+          )
         ],
       ),
     );
