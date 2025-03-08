@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:homeview/core/app_colors.dart';
 
 class CustomFloatingActionButton extends StatelessWidget {
-  const CustomFloatingActionButton({
-    super.key,
-  });
+  const CustomFloatingActionButton({super.key});
 
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(
-      backgroundColor: Colors.black,
+      backgroundColor: AppColors.black,
       radius: 25,
-      child: Icon(Icons.business_center_outlined, color: Colors.white),
+      child: Icon(Icons.business_center_outlined, color: AppColors.main),
     );
   }
 }
