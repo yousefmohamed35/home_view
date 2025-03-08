@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/app_colors.dart';
+import 'trending_now_item.dart';
 
 class HomeViewItem extends StatelessWidget {
-  const HomeViewItem({
-    super.key,
-  });
+  const HomeViewItem({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +14,12 @@ class HomeViewItem extends StatelessWidget {
         borderRadius: BorderRadius.circular(8),
         border: Border.all(width: 0.5, color: AppColors.grey500),
       ),
-      child: Column(children: [Text('yousef')]),
+      child: Column(
+        children: [
+          TrendingNowItem(),
+        ],
+      ),
     );
   }
 }
+
