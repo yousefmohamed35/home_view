@@ -14,7 +14,7 @@ class TitleWidget extends StatelessWidget {
         Text(
           'Arabic call center',
           style: GoogleFonts.lato(
-            textStyle: AppStyles.bold20.copyWith(color: AppColors.black),
+            textStyle: AppStyles.medium20.copyWith(color: AppColors.black),
           ),
         ),
         SizedBox(width: 8),

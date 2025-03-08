@@ -5,21 +5,19 @@ import '../../../../core/app_colors.dart';
 import '../../../../core/styles.dart';
 
 class TrendingNowItem extends StatelessWidget {
-  const TrendingNowItem({
-    super.key,
-  });
+  const TrendingNowItem({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 8),
+      padding: EdgeInsets.all(4),
       decoration: BoxDecoration(
         color: AppColors.blue,
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(10),
       ),
       child: Row(
         children: [
-          Icon(Icons.access_alarm),
+          Icon(Icons.access_alarm, size: 16),
           SizedBox(width: 8),
           Text(
             'Trending Now',

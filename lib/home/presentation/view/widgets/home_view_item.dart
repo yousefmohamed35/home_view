@@ -7,13 +7,19 @@ class HomeViewItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: AppColors.grey,
-        borderRadius: BorderRadius.circular(8),
-        border: Border.all(width: 0.5, color: AppColors.grey500),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: Container(
+        decoration: BoxDecoration(
+          color: AppColors.grey,
+          borderRadius: BorderRadius.circular(8),
+          border: Border.all(width: 0.5, color: AppColors.grey500),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(8),
+          child: HomeViewItemTop(),
+        ),
       ),
-      child: HomeViewItemTop(),
     );
   }
 }
