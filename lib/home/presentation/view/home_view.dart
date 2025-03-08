@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'widgets/custom_container_app_bar.dart';
 import 'widgets/custom_floating_action_button.dart';
+import 'widgets/home_view_item.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -13,13 +14,7 @@ class HomeView extends StatelessWidget {
       body: Column(
         children: [
           CustomContainerAppBar(),
-          Container(
-            child: Column(
-              children: [
-                
-              ],
-            ),
-          )
+          HomeViewItem(),
         ],
       ),
     );

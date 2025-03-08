@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:homeview/core/app_colors.dart';
+import 'package:homeview/core/styles.dart';
 
 class CustomContainerAppBar extends StatelessWidget {
   const CustomContainerAppBar({super.key});
@@ -6,7 +9,7 @@ class CustomContainerAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color(0xff2B5B8D),
+      color: AppColors.blue,
       height: 153,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -15,13 +18,9 @@ class CustomContainerAppBar extends StatelessWidget {
           children: [
             Text(
               'Hello, Karim',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w600,
-                color: Color(0xffF9F6EE),
-              ),
+              style: GoogleFonts.lato(textStyle: AppStyles.bold20),
             ),
-            Icon(Icons.notifications_outlined, color: Color(0xffF9F6EE)),
+            Icon(Icons.notifications_outlined, color: AppColors.main),
           ],
         ),
       ),
