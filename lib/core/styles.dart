@@ -39,7 +39,7 @@ abstract class AppStyles {
   static const regular14 = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.normal,
-    color: AppColors.grey500,
+    color: AppColors.grey400,
   );
   static const medium14 = TextStyle(
     fontSize: 14,
