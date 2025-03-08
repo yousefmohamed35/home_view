@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:homeview/core/styles.dart';
 
 import '../../../../core/app_colors.dart';
+import 'title_widget.dart';
 import 'trending_now_item.dart';
 
 class HomeViewItem extends StatelessWidget {
@@ -17,6 +20,7 @@ class HomeViewItem extends StatelessWidget {
       child: Column(
         children: [
           TrendingNowItem(),
+          TitleWidget(),
         ],
       ),
     );
