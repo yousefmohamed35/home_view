@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:homeview/core/styles.dart';
 import '../../../../core/app_colors.dart';
+import 'custom_rating.dart';
 import 'home_view_item_top.dart';
 import 'information_item.dart';
 
@@ -28,6 +31,9 @@ class HomeViewItem extends StatelessWidget {
                 height: 20,
               ),
               InformationItem(text: 'cairo', icon: Icons.location_on_outlined),
+              InformationItem(text: 'Full time', icon: Icons.schedule),
+              InformationItem(text: '6000 EGP/Month', icon: Icons.money_sharp),
+              CustomRating(),
             ],
           ),
         ),
@@ -35,3 +41,4 @@ class HomeViewItem extends StatelessWidget {
     );
   }
 }
+
