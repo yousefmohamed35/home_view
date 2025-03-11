@@ -11,12 +11,16 @@ class HomeView extends StatelessWidget {
     return Scaffold(
       floatingActionButton: CustomFloatingActionButton(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      body: Column(
-        children: [
-          CustomContainerAppBar(),
-          SizedBox(height: 60),
-          HomeViewItem(),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            CustomContainerAppBar(),
+            SizedBox(height: 60),
+            HomeViewItem(),
+            HomeViewItem(),
+            HomeViewItem(),
+          ],
+        ),
       ),
     );
   }
