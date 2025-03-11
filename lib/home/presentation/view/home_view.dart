@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'widgets/company_review_title.dart';
 import 'widgets/custom_container_app_bar.dart';
 import 'widgets/custom_floating_action_button.dart';
 import 'widgets/home_view_item.dart';
@@ -17,11 +18,12 @@ class HomeView extends StatelessWidget {
             CustomContainerAppBar(),
             SizedBox(height: 60),
             HomeViewItem(),
-            HomeViewItem(),
-            HomeViewItem(),
+            SizedBox(height: 20),
+            CompanyReviewTitle(),
           ],
         ),
       ),
     );
   }
 }
+
