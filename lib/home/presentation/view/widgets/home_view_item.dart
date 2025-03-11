@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:homeview/core/styles.dart';
+import 'package:homeview/home/presentation/view/widgets/custom_button.dart';
 import '../../../../core/app_colors.dart';
 import 'custom_rating.dart';
 import 'home_view_item_top.dart';
@@ -31,9 +30,21 @@ class HomeViewItem extends StatelessWidget {
                 height: 20,
               ),
               InformationItem(text: 'cairo', icon: Icons.location_on_outlined),
+              SizedBox(height: 10),
               InformationItem(text: 'Full time', icon: Icons.schedule),
+              SizedBox(height: 10),
               InformationItem(text: '6000 EGP/Month', icon: Icons.money_sharp),
+              SizedBox(height: 10),
               CustomRating(),
+              SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  CustomButton(text: 'Save', isIcon: true),
+                  CustomButton(text: 'View'),
+                ],
+              ),
+              SizedBox(height: 30),
             ],
           ),
         ),
@@ -41,4 +52,3 @@ class HomeViewItem extends StatelessWidget {
     );
   }
 }
-
