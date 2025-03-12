@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../../../core/app_colors.dart';
 import 'custom_rating.dart';
 import 'title_widget.dart';
@@ -29,6 +28,10 @@ class CompanyReviewItem extends StatelessWidget {
                   color: AppColors.main,
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(width: 0.5, color: AppColors.grey500),
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: Image.asset('assets/images/im.png'),
                 ),
               ),
               SizedBox(width: 8),

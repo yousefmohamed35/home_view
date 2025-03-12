@@ -18,7 +18,7 @@ class HomeViewItemTop extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             TrendingNowItem(),
-            TitleWidget(text: 'Arabic call center',),
+            TitleWidget(text: 'Arabic call center'),
             Text(
               'Rog Web',
               style: GoogleFonts.lato(textStyle: AppStyles.regular14),
@@ -29,9 +29,13 @@ class HomeViewItemTop extends StatelessWidget {
           width: 74,
           height: 64,
           decoration: BoxDecoration(
-            color: AppColors.main,
+            color: AppColors.white,
             borderRadius: BorderRadius.circular(8),
             border: Border.all(width: 0.5, color: AppColors.grey500),
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(8),
+            child: Image.asset('assets/images/im.png'),
           ),
         ),
       ],
