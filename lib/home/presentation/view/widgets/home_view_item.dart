@@ -16,7 +16,7 @@ class HomeViewItem extends StatelessWidget {
         decoration: BoxDecoration(
           color: AppColors.grey,
           borderRadius: BorderRadius.circular(8),
-          border: Border.all(width: 0.5, color: AppColors.grey500),
+          border: Border.all(width: 0.5, color: AppColors.borderColor),
         ),
         child: Padding(
           padding: const EdgeInsets.all(8),

@@ -13,7 +13,7 @@ class CompanyReviewItem extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.grey,
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(width: 0.5, color: AppColors.grey500),
+        border: Border.all(width: 0.5, color: AppColors.borderColor),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -27,7 +27,7 @@ class CompanyReviewItem extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: AppColors.main,
                   borderRadius: BorderRadius.circular(8),
-                  border: Border.all(width: 0.5, color: AppColors.grey500),
+                  border: Border.all(width: 0.5, color: AppColors.borderColor),
                 ),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8),
