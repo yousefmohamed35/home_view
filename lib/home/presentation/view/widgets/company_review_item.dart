@@ -5,20 +5,19 @@ import 'custom_rating.dart';
 import 'title_widget.dart';
 
 class CompanyReviewItem extends StatelessWidget {
-  const CompanyReviewItem({
-    super.key,
-  });
+  const CompanyReviewItem({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(16),
+      padding: EdgeInsets.all(8),
       decoration: BoxDecoration(
         color: AppColors.grey,
         borderRadius: BorderRadius.circular(8),
         border: Border.all(width: 0.5, color: AppColors.grey500),
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         spacing: 12,
         children: [
           Row(
@@ -29,10 +28,7 @@ class CompanyReviewItem extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: AppColors.main,
                   borderRadius: BorderRadius.circular(8),
-                  border: Border.all(
-                    width: 0.5,
-                    color: AppColors.grey500,
-                  ),
+                  border: Border.all(width: 0.5, color: AppColors.grey500),
                 ),
               ),
               SizedBox(width: 8),
