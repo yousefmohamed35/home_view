@@ -7,7 +7,7 @@ class CustomFloatingActionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(
-      backgroundColor: AppColors.main,
+      backgroundColor: AppColors.white,
       radius: 36,
       child: CircleAvatar(
         backgroundColor: AppColors.black,
