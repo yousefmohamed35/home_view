@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:homeview/core/app_colors.dart';
 
 import 'bottom_navigation_bar.dart';
-
-
 
 void main() {
   runApp(const MyApp());
@@ -17,6 +16,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: CustomBottomNavigationBar(),
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.blue),
+      ),
     );
   }
 }
