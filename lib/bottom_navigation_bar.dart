@@ -5,6 +5,7 @@ import 'package:homeview/core/styles.dart';
 import 'package:homeview/home/presentation/view/home_view.dart';
 
 import 'home/presentation/view/widgets/custom_floating_action_button.dart';
+import 'my_job/presentation/view/my_job_view.dart';
 
 class CustomBottomNavigationBar extends StatefulWidget {
   const CustomBottomNavigationBar({super.key});
@@ -17,7 +18,7 @@ class CustomBottomNavigationBar extends StatefulWidget {
 class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
   int _selectedIndex = 0;
 
-  static const List<Widget> _pages = [HomeView(), SizedBox()];
+  static const List<Widget> _pages = [HomeView(), SizedBox(), MyJobView()];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -28,7 +29,12 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: CustomFloatingActionButton(isSelected: ,),
+      floatingActionButton: CustomFloatingActionButton(
+        isSelected: _selectedIndex == 2,
+        onTap: () {
+          _onItemTapped(2);
+        },
+      ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: _pages[_selectedIndex],
       bottomNavigationBar: Container(
