@@ -25,9 +25,9 @@ class CustomTapBarButton extends StatelessWidget {
           color: isSelected ? Color(0xff20446A) : Color(0xffBBB9B3),
         ),
       ),
-      onPressed: () {},
+      onPressed: onPressed,
       child: Text(
-        'Saved',
+        text,
         style: GoogleFonts.lato(
           textStyle: AppStyles.regular14.copyWith(
             color: isSelected ? AppColors.blue : AppColors.white,
