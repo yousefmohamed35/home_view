@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:homeview/my_job/model/tap_bar_model.dart';
 import '../../../../core/app_colors.dart';
+import '../saved_view.dart';
 import 'custom_tap_bar_button.dart';
 
 class MyJobViewBody extends StatefulWidget {
@@ -11,15 +12,15 @@ class MyJobViewBody extends StatefulWidget {
 }
 
 int selectedItem = 0;
-List<TapBarModel> tapBar = [
-  TapBarModel(text: 'Saved', widget: Center(child: Text('saved'))),
-  TapBarModel(text: 'Applied', widget: Center(child: Text('me'))),
-  TapBarModel(text: 'last work', widget: Center(child: Text('last'))),
-];
 
 class _MyJobViewBodyState extends State<MyJobViewBody> {
   @override
   Widget build(BuildContext context) {
+    List<TapBarModel> tapBar = [
+      TapBarModel(text: 'Saved', widget: SavedView()),
+      TapBarModel(text: 'Applied', widget: Center(child: Text('me'))),
+      TapBarModel(text: 'last work', widget: Center(child: Text('last'))),
+    ];
     return Column(
       children: [
         Container(
@@ -41,7 +42,7 @@ class _MyJobViewBodyState extends State<MyJobViewBody> {
             }),
           ),
         ),
-        tapBar[selectedItem].widget,
+        Expanded(child: tapBar[selectedItem].widget),
       ],
     );
   }
