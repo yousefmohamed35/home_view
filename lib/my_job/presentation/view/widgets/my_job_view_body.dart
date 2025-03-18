@@ -3,9 +3,14 @@ import 'package:flutter/material.dart';
 import '../../../../core/app_colors.dart';
 import 'custom_tap_bar_button.dart';
 
-class MyJobViewBody extends StatelessWidget {
+class MyJobViewBody extends StatefulWidget {
   const MyJobViewBody({super.key});
 
+  @override
+  State<MyJobViewBody> createState() => _MyJobViewBodyState();
+}
+
+class _MyJobViewBodyState extends State<MyJobViewBody> {
   @override
   Widget build(BuildContext context) {
     return Column(

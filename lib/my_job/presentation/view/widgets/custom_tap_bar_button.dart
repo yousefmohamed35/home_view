@@ -20,7 +20,10 @@ class CustomTapBarButton extends StatelessWidget {
       color: isSelected ? Color(0xffBDCCDC) : Color(0xffBBB9B3),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(20),
-        side: BorderSide(width: 2, color: Color(0xff20446A)),
+        side: BorderSide(
+          width: 2,
+          color: isSelected ? Color(0xff20446A) : Color(0xffBBB9B3),
+        ),
       ),
       onPressed: () {},
       child: Text(
