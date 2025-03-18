@@ -18,10 +18,10 @@ class CustomBottomNavigationBar extends StatefulWidget {
 class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
   int _selectedIndex = 0;
 
-  static List<Widget> _pages = [
+  static final List<Widget> _pages = [
     const HomeView(),
     const SizedBox(),
-    MyJobView(),
+   const MyJobView(),
   ];
 
   void _onItemTapped(int index) {

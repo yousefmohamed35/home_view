@@ -4,9 +4,7 @@ import '../../../../core/app_colors.dart';
 import 'custom_tap_bar_button.dart';
 
 class MyJobViewBody extends StatelessWidget {
-  const MyJobViewBody({
-    super.key,
-  });
+  const MyJobViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +16,9 @@ class MyJobViewBody extends StatelessWidget {
           child: Row(
             spacing: 10,
             children: List.generate(3, (index) {
-              return Expanded(child: CustomTapBarButton());
+              return Expanded(
+                child: CustomTapBarButton(text: 'Saved', onPressed: () {}),
+              );
             }),
           ),
         ),
@@ -26,4 +26,3 @@ class MyJobViewBody extends StatelessWidget {
     );
   }
 }
-
