@@ -41,9 +41,9 @@ class HomeViewItem extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  CustomButton(text: 'Save', isIcon: true),
                   CustomButton(
-                    text: 'Save',
-                    isIcon: true,
+                    text: 'View',
                     onTap: () {
                       Navigator.push(
                         context,
@@ -55,7 +55,6 @@ class HomeViewItem extends StatelessWidget {
                       );
                     },
                   ),
-                  CustomButton(text: 'View'),
                 ],
               ),
               SizedBox(height: 30),
