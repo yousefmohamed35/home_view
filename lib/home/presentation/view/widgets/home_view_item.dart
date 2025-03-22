@@ -13,58 +13,53 @@ class HomeViewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: InkWell(
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) {
-                return JobDescriptionView();
-              },
-            ),
-          );
-        },
-        child: Container(
-          decoration: BoxDecoration(
-            color: AppColors.grey,
-            borderRadius: BorderRadius.circular(8),
-            border: Border.all(width: 0.5, color: AppColors.borderColor),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(8),
-            child: Column(
-              children: [
-                HomeViewItemTop(),
-                Divider(
-                  color: Color(0xff95948F),
-                  indent: 10,
-                  endIndent: 10,
-                  height: 20,
-                ),
-                InformationItem(
-                  text: 'cairo',
-                  icon: Icons.location_on_outlined,
-                ),
-                SizedBox(height: 10),
-                InformationItem(text: 'Full time', icon: Icons.schedule),
-                SizedBox(height: 10),
-                InformationItem(
-                  text: '6000 EGP/Month',
-                  icon: Icons.money_sharp,
-                ),
-                SizedBox(height: 10),
-                CustomRating(),
-                SizedBox(height: 20),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    CustomButton(text: 'Save', isIcon: true),
-                    CustomButton(text: 'View'),
-                  ],
-                ),
-                SizedBox(height: 30),
-              ],
-            ),
+      child: Container(
+        decoration: BoxDecoration(
+          color: AppColors.grey,
+          borderRadius: BorderRadius.circular(8),
+          border: Border.all(width: 0.5, color: AppColors.borderColor),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(8),
+          child: Column(
+            children: [
+              HomeViewItemTop(),
+              Divider(
+                color: Color(0xff95948F),
+                indent: 10,
+                endIndent: 10,
+                height: 20,
+              ),
+              InformationItem(text: 'cairo', icon: Icons.location_on_outlined),
+              SizedBox(height: 10),
+              InformationItem(text: 'Full time', icon: Icons.schedule),
+              SizedBox(height: 10),
+              InformationItem(text: '6000 EGP/Month', icon: Icons.money_sharp),
+              SizedBox(height: 10),
+              CustomRating(),
+              SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  CustomButton(
+                    text: 'Save',
+                    isIcon: true,
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return JobDescriptionView();
+                          },
+                        ),
+                      );
+                    },
+                  ),
+                  CustomButton(text: 'View'),
+                ],
+              ),
+              SizedBox(height: 30),
+            ],
           ),
         ),
       ),
