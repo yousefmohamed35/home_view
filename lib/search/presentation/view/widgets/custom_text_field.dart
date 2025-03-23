@@ -6,11 +6,11 @@ class CustomTextField extends StatelessWidget {
   final Function(String) onChanged;
 
   const CustomTextField({
-    Key? key,
+    super.key,
     required this.labelText,
     required this.keyboardType,
     required this.onChanged,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +20,9 @@ class CustomTextField extends StatelessWidget {
         Text(labelText, style: TextStyle(fontSize: 20)),
         SizedBox(height: 4),
         Container(
-          height: 60,
+          height: 50,
           decoration: BoxDecoration(
-            border: Border.all(color: Colors.grey.shade300, width: 1),
+            border: Border.all(color: Colors.black, width: 1),
             borderRadius: BorderRadius.circular(8),
           ),
           child: TextFormField(

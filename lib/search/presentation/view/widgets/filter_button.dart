@@ -8,29 +8,35 @@ class FilterButton extends StatelessWidget {
   final Function(String) onPressed;
 
   const FilterButton({
-    Key? key,
+    super.key,
     required this.text,
     required this.value,
     required this.selectedValue,
     required this.onPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
-    return  Expanded(
-      child: ElevatedButton(
-        onPressed: () => onPressed(value),
-        style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.resolveWith<Color>(
-            (Set<MaterialState> states) {
-              return selectedValue == value ? AppColors.blue :Color(0xFFD9D9D9);
-            },
+    return Expanded(
+      child: InkWell(
+        onTap: () => onPressed(value),
+        child: Container(
+          decoration: BoxDecoration(
+            color: selectedValue == value ? AppColors.blue : Colors.transparent,
+            border: Border.all(
+              color: AppColors.blue, 
+              width: 1.5, 
+            ),
+            borderRadius: BorderRadius.circular(30), 
           ),
-        ),
-        child: Text(
-          text,
-          style: TextStyle(
-            color: selectedValue == value ? Colors.white : AppColors.blue, 
+          padding: const EdgeInsets.symmetric(vertical: 7, horizontal: 16), 
+          alignment: Alignment.center,
+          child: Text(
+            text,
+            style: TextStyle(
+              color: selectedValue == value ? Colors.white : AppColors.blue,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
       ),
