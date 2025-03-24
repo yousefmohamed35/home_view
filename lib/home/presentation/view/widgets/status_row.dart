@@ -6,22 +6,20 @@ class StatusRowWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         _buildStatusContainer(
           text: "3 Hours Ago",
           textColor: Colors.black54,
           borderColor: Colors.grey.shade400,
-          width: 65,
         ),
-        SizedBox(width: 8),
+
         _buildStatusContainer(
           text: "33 Applicants",
           textColor: Colors.green,
           borderColor: Colors.green,
-          width: 95,
         ),
-        SizedBox(width: 8),
+
         _buildVerifiedContainer(),
       ],
     );
@@ -31,12 +29,10 @@ class StatusRowWidget extends StatelessWidget {
     required String text,
     required Color textColor,
     required Color borderColor,
-    required double width,
   }) {
     return Container(
-      width: width,
       height: 30,
-      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+      padding: EdgeInsets.symmetric(horizontal: 4, vertical: 6),
       decoration: BoxDecoration(
         border: Border.all(color: borderColor),
         borderRadius: BorderRadius.circular(10),
@@ -56,9 +52,8 @@ class StatusRowWidget extends StatelessWidget {
 
   Widget _buildVerifiedContainer() {
     return Container(
-      width: 140,
       height: 30,
-      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+      padding: EdgeInsets.symmetric(horizontal: 4, vertical: 6),
       decoration: BoxDecoration(
         border: Border.all(color: Colors.blue),
         borderRadius: BorderRadius.circular(10),
