@@ -5,7 +5,7 @@ import 'package:homeview/core/app_colors.dart';
 class ReviewsHeader extends StatelessWidget {
   final VoidCallback onViewAllPressed;
 
-  ReviewsHeader({super.key, required this.onViewAllPressed});
+  const ReviewsHeader({super.key, required this.onViewAllPressed});
 
   @override
   Widget build(BuildContext context) {

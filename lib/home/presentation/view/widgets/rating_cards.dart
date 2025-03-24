@@ -2,22 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:homeview/core/app_colors.dart';
 
 class RatingCards extends StatelessWidget {
-  final int itemCount; 
+  final int itemCount;
   const RatingCards({super.key, this.itemCount = 10});
 
   @override
   Widget build(BuildContext context) {
-    const double ratingValue = 4.5; 
+    const double ratingValue = 4.5;
     const String reviewText =
         "Informing Customers About Offers Logging Customer Complaints";
-    
+
     final List<Map<String, dynamic>> ratings = List.generate(
       itemCount,
       (index) => {"rating": ratingValue, "reviews": reviewText},
     );
 
     return SizedBox(
-      height: 110,
+      height: 130,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: ratings.length,
