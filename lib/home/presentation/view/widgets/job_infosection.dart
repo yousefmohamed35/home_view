@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:homeview/core/app_colors.dart';
 
-
 class JobInfoSection extends StatelessWidget {
   final VoidCallback onLearnMore;
   final VoidCallback onReportJob;
@@ -17,7 +16,7 @@ class JobInfoSection extends StatelessWidget {
           "At the side, we strive to make the job search process efficient, transparent, and secure. Start your journey today and let us help you find your dream job.",
           style: TextStyle(color: Colors.grey[600], fontSize: 12),
         ),
-        SizedBox(height: 8),
+
         Row(
           children: [
             TextButton(
