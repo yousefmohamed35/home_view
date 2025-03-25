@@ -7,6 +7,11 @@ class AppliedView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(child: Column(children: [AppliedJobItem()]));
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(children: [AppliedJobItem()]),
+      ),
+    );
   }
 }
