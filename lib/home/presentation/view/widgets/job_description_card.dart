@@ -9,9 +9,7 @@ class JobDescriptionCard extends StatelessWidget {
     return Center(
       child: Card(
         color: AppColors.grey200,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         elevation: 0.5,
         margin: EdgeInsets.all(5),
         child: Padding(
@@ -21,32 +19,32 @@ class JobDescriptionCard extends StatelessWidget {
             children: [
               Text(
                 "Job Description",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 8),
               ..._buildJobResponsibilities(),
               Divider(),
               SizedBox(height: 8),
+
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  _jobDetail(Icons.location_on, "Location", "Cairo"),
-                  _jobDetail(Icons.access_time, "Job Type", "Full Time"),
-                ],
-              ),
-              SizedBox(height: 8),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  _jobDetail(Icons.person, "Gender", "Male/Female"),
-                  Spacer(),
-                  _jobDetail(
-                    Icons.money,
-                    "Salary",
-                    "6000-9000 EGP/Month",
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      _jobDetail(Icons.location_on, "Location", "Cairo"),
+                      SizedBox(height: 12),
+                      _jobDetail(Icons.person, "Gender", "Male/Female"),
+                    ],
+                  ),
+
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      _jobDetail(Icons.access_time, "Job Type", "Full Time"),
+                      SizedBox(height: 12),
+                      _jobDetail(Icons.money, "Salary", "6000-9000 EGP/Month"),
+                    ],
                   ),
                 ],
               ),
@@ -56,6 +54,7 @@ class JobDescriptionCard extends StatelessWidget {
       ),
     );
   }
+
   List<Widget> _buildJobResponsibilities() {
     List<String> responsibilities = [
       "Responding to customer questions and providing the required information",
@@ -63,32 +62,28 @@ class JobDescriptionCard extends StatelessWidget {
       "Logging customer complaints and working to find solutions",
       "Informing customers about offers",
     ];
-    return responsibilities.map(
-      (text) => Padding(
-        padding: EdgeInsets.only(bottom: 4),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Icon(
-              Icons.circle,
-              size: 8,
-              color: AppColors.grey400,
-            ),
-            SizedBox(width: 8),
-            Expanded(
-              child: Text(
-                text,
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.grey[700],
+    return responsibilities
+        .map(
+          (text) => Padding(
+            padding: EdgeInsets.only(bottom: 4),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Icon(Icons.circle, size: 8, color: AppColors.grey400),
+                SizedBox(width: 8),
+                Expanded(
+                  child: Text(
+                    text,
+                    style: TextStyle(fontSize: 16, color: Colors.grey[700]),
+                  ),
                 ),
-              ),
+              ],
             ),
-          ],
-        ),
-      ),
-    ).toList();
+          ),
+        )
+        .toList();
   }
+
   Widget _jobDetail(IconData icon, String title, String value) {
     return Row(
       children: [
@@ -97,7 +92,10 @@ class JobDescriptionCard extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(title, style: TextStyle(fontSize: 12, color: Colors.grey[600])),
+            Text(
+              title,
+              style: TextStyle(fontSize: 12, color: Colors.grey[600]),
+            ),
             Text(
               value,
               style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),

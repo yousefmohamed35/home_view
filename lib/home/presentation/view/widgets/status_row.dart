@@ -31,7 +31,6 @@ class StatusRowWidget extends StatelessWidget {
     required Color borderColor,
   }) {
     return Container(
-      height: 30,
       padding: EdgeInsets.symmetric(horizontal: 4, vertical: 6),
       decoration: BoxDecoration(
         border: Border.all(color: borderColor),
@@ -52,7 +51,6 @@ class StatusRowWidget extends StatelessWidget {
 
   Widget _buildVerifiedContainer() {
     return Container(
-      height: 30,
       padding: EdgeInsets.symmetric(horizontal: 4, vertical: 6),
       decoration: BoxDecoration(
         border: Border.all(color: Colors.blue),
