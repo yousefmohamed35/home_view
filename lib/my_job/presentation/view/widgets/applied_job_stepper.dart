@@ -2,6 +2,8 @@ import 'package:easy_stepper/easy_stepper.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/app_colors.dart';
+import 'custom_step.dart';
+import 'custom_step_circle.dart';
 
 class AppliedJobStepper extends StatefulWidget {
   const AppliedJobStepper({super.key});
@@ -21,8 +23,7 @@ class _AppliedJobStepperState extends State<AppliedJobStepper> {
         borderRadius: BorderRadius.circular(8),
         border: Border.all(width: 0.5, color: AppColors.borderColor),
       ),
-      child: CustomStepCircle(),
+      child: CustomStep(title: 'Application'),
     );
   }
 }
-
