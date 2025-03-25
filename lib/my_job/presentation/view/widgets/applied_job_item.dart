@@ -74,6 +74,7 @@ class AppliedJobItem extends StatelessWidget {
             ),
           ),
         ),
+        SizedBox(height: 8),
         AppliedJobStepper(),
       ],
     );
