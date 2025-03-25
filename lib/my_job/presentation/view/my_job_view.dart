@@ -7,6 +7,6 @@ class MyJobView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: buildMyJobAppBar(), body: MyJobViewBody());
+    return Scaffold(appBar: buildMyJobAppBar(context), body: MyJobViewBody());
   }
 }
