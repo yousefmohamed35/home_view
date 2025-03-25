@@ -16,37 +16,7 @@ class LastWorkView extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          Container(
-            padding: EdgeInsets.all(8),
-            decoration: BoxDecoration(
-              color: AppColors.grey,
-              borderRadius: BorderRadius.circular(8),
-              border: Border.all(width: 0.5, color: AppColors.borderColor),
-            ),
-            child: Column(
-              children: [
-                HomeViewItemTop(),
-                Divider(
-                  color: Color(0xff95948F),
-                  indent: 10,
-                  endIndent: 10,
-                  height: 20,
-                ),
-                Text(
-                  'Rate your Last experience with us!',
-                  style: GoogleFonts.lato(textStyle: AppStyles.medium18),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: List.generate(5, (index) {
-                    return Icon(Icons.star);
-                  }),
-                ),
-                CustomTextFieldLastWorkView(),
-                CustomMyJobButton(),
-              ],
-            ),
-          ),
+          LastWorkViewItem(),
         ],
       ),
     );
