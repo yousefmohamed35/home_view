@@ -65,11 +65,14 @@ class JobDescriptionCard extends StatelessWidget {
     return responsibilities
         .map(
           (text) => Padding(
-            padding: EdgeInsets.only(bottom: 4),
+            padding: EdgeInsets.only(bottom: 10),
             child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Icon(Icons.circle, size: 8, color: AppColors.grey400),
+                Padding(
+                  padding: const EdgeInsets.only(top: 6),
+                  child: Icon(Icons.circle, size: 8, color: AppColors.grey400),
+                ),
                 SizedBox(width: 8),
                 Expanded(
                   child: Text(
