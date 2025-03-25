@@ -42,7 +42,7 @@ class LastWorkViewItem extends StatelessWidget {
           SizedBox(height: 20),
           CustomTextFieldLastWorkView(),
           SizedBox(height: 20),
-          CustomMyJobButton(),
+          CustomMyJobButton(text: 'Submit',),
         ],
       ),
     );

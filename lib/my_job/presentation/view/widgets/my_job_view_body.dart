@@ -20,7 +20,7 @@ class _MyJobViewBodyState extends State<MyJobViewBody> {
   Widget build(BuildContext context) {
     List<TapBarModel> tapBar = [
       TapBarModel(text: 'Saved', widget: SavedView()),
-      TapBarModel(text: 'Applied', widget:AppliedView()),
+      TapBarModel(text: 'Applied', widget: AppliedView()),
       TapBarModel(text: 'last work', widget: LastWorkView()),
     ];
     return Column(
