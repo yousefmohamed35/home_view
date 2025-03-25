@@ -7,9 +7,7 @@ import 'custom_my_job_button.dart';
 import 'custom_text_field_last_work_view.dart';
 
 class LastWorkViewItem extends StatelessWidget {
-  const LastWorkViewItem({
-    super.key,
-  });
+  const LastWorkViewItem({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +30,7 @@ class LastWorkViewItem extends StatelessWidget {
           Text(
             'Rate your Last experience with us!',
             style: GoogleFonts.lato(textStyle: AppStyles.medium18),
+            textAlign: TextAlign.center,
           ),
           SizedBox(height: 20),
           Row(
