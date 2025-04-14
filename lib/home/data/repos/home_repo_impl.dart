@@ -11,7 +11,7 @@ class HomeRepoImpl implements HomeRepo {
 
   @override
   Future<Either<Failure, List<HomeModel>>> getAllJopPosts() async {
-   try {
+    try {
       var data = await apiService.get(
         endPoint: 'Home/GetRandomJobs',
       ); // Corrected the variable name
@@ -21,8 +21,7 @@ class HomeRepoImpl implements HomeRepo {
       }
       return right(jobs);
     } catch (e) {
-      return left(ServerFailure());
+      return left(ServerFailure(errorMessage: e.toString()));
     }
-  
   }
 }
