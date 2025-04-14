@@ -11,9 +11,9 @@ class HomeModel {
     required this.jobType,
   });
   factory HomeModel.fromJson(Map<String, dynamic> json) => HomeModel(
-    title: json['data']['title'],
-    description: json['data']['description'],
-    location: json['data']['location'],
-    jobType: json['data']['jobType'],
+    title: json['title'],
+    description: json['description'],
+    location: json['location'],
+    jobType: json['jobType'],
   );
 }
