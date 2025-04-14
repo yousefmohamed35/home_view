@@ -7,8 +7,8 @@ import 'title_widget.dart';
 import 'trending_now_item.dart';
 
 class HomeViewItemTop extends StatelessWidget {
-  const HomeViewItemTop({super.key});
-
+  const HomeViewItemTop({super.key, required this.title});
+  final String title;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -18,7 +18,7 @@ class HomeViewItemTop extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             TrendingNowItem(),
-            TitleWidget(text: 'Arabic call center'),
+            TitleWidget(text: title),
             Text(
               'Rog Web',
               style: GoogleFonts.lato(textStyle: AppStyles.regular14),

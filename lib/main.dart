@@ -19,7 +19,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => HomeViewCubit(getIt.get<HomeRepoImpl>()),
+      create:
+          (context) =>
+              HomeViewCubit(getIt.get<HomeRepoImpl>())..getAllJobPosts(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         home: CustomBottomNavigationBar(),

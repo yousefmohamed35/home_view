@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:homeview/home/data/models/home_model.dart';
 import 'package:homeview/home/presentation/view/job_description_view.dart';
 import 'package:homeview/home/presentation/view/widgets/custom_button.dart';
 import '../../../../core/app_colors.dart';
@@ -7,8 +8,8 @@ import 'home_view_item_top.dart';
 import 'information_item.dart';
 
 class HomeViewItem extends StatelessWidget {
-  const HomeViewItem({super.key});
-
+  const HomeViewItem({super.key, required this.job});
+  final HomeModel job;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -23,16 +24,19 @@ class HomeViewItem extends StatelessWidget {
           padding: const EdgeInsets.all(8),
           child: Column(
             children: [
-              HomeViewItemTop(),
+              HomeViewItemTop(title: job.title),
               Divider(
                 color: Color(0xff95948F),
                 indent: 10,
                 endIndent: 10,
                 height: 20,
               ),
-              InformationItem(text: 'cairo', icon: Icons.location_on_outlined),
+              InformationItem(
+                text: job.location,
+                icon: Icons.location_on_outlined,
+              ),
               SizedBox(height: 10),
-              InformationItem(text: 'Full time', icon: Icons.schedule),
+              InformationItem(text: job.jobType, icon: Icons.schedule),
               SizedBox(height: 10),
               InformationItem(text: '6000 EGP/Month', icon: Icons.money_sharp),
               SizedBox(height: 10),

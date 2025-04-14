@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 import 'package:homeview/core/error/failure.dart';
 import 'package:homeview/core/service/api_service.dart';
 import 'package:homeview/home/data/models/home_model.dart';
@@ -20,7 +21,10 @@ class HomeRepoImpl implements HomeRepo {
         jobs.add(HomeModel.fromJson(job));
       }
       return right(jobs);
-    } catch (e) {
+    } on Exception catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDioException(e));
+      }
       return left(ServerFailure(errorMessage: e.toString()));
     }
   }
