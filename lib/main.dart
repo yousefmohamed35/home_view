@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:homeview/core/app_colors.dart';
+import 'package:homeview/core/service/service_locator.dart';
 
 import 'bottom_navigation_bar.dart';
 
 void main() {
+  setupServiceLocator();
   runApp(const MyApp());
 }
 
