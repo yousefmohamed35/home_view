@@ -5,7 +5,7 @@ class JobInfoSection extends StatelessWidget {
   final VoidCallback onLearnMore;
   final VoidCallback onReportJob;
 
-  JobInfoSection({required this.onLearnMore, required this.onReportJob});
+  const JobInfoSection({super.key, required this.onLearnMore, required this.onReportJob});
 
   @override
   Widget build(BuildContext context) {

@@ -15,6 +15,7 @@ class CustomRating extends StatelessWidget {
       children: [
         Container(
           padding: EdgeInsets.symmetric(horizontal: 8),
+          // ignore: deprecated_member_use
           color: Color(0xFFD34E33).withOpacity(0.2),
           child: Row(
             children: [

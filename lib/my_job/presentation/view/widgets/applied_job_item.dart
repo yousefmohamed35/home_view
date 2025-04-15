@@ -26,7 +26,7 @@ class AppliedJobItem extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                HomeViewItemTop(),
+                HomeViewItemTop(title: '',),
                 Divider(
                   color: Color(0xff95948F),
                   indent: 10,
@@ -50,6 +50,7 @@ class AppliedJobItem extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.all(4),
                   decoration: BoxDecoration(
+                    // ignore: deprecated_member_use
                     color: Color(0xff4DD206).withOpacity(0.15),
                     borderRadius: BorderRadius.circular(10),
                   ),

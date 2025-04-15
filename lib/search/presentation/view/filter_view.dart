@@ -76,9 +76,9 @@ class _FilterPageState extends State<FilterView> {
                   // Show results logic here
                 },
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(AppColors.blue),
-                  minimumSize: MaterialStateProperty.all(Size(double.infinity, 50)),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  backgroundColor: WidgetStateProperty.all(AppColors.blue),
+                  minimumSize: WidgetStateProperty.all(Size(double.infinity, 50)),
+                  shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                     RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
