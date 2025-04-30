@@ -57,7 +57,7 @@ class HomeViewItem extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            return JobDescriptionView();
+                            return JobDescriptionView(job: job);
                           },
                         ),
                       );

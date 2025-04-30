@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:homeview/core/app_colors.dart';
 
 class RequirementsCard extends StatelessWidget {
-  const RequirementsCard({super.key});
-
+  const RequirementsCard({super.key, required this.requirement});
+  final String requirement;
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -32,10 +32,7 @@ class RequirementsCard extends StatelessWidget {
 
   List<Widget> _buildRequirementsList() {
     List<String> requirements = [
-      "Responding to customer questions and providing the required information",
-      "Assisting customers in solving any problems they encounter with products or services",
-      "Logging customer complaints and working to find solutions",
-      "Informing customers about offers",
+      requirement
     ];
 
     return requirements

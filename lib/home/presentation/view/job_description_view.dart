@@ -7,7 +7,6 @@ import 'package:homeview/home/presentation/view/widgets/custom_app_bar.dart';
 import 'package:homeview/home/presentation/view/widgets/job_description_card.dart';
 import 'package:homeview/home/presentation/view/widgets/job_infosection.dart';
 import 'package:homeview/home/presentation/view/widgets/rating_cards.dart';
-import 'package:homeview/home/presentation/view/widgets/requirements_card.dart';
 import 'package:homeview/home/presentation/view/widgets/review_header.dart';
 import 'package:homeview/home/presentation/view/widgets/status_row.dart';
 import 'widgets/hiring_team_card.dart';
@@ -31,12 +30,16 @@ class JobDescriptionView extends StatelessWidget {
           children: [
             CallCenterWidget(title: job.title, companyName: job.companyName),
             SizedBox(height: 8),
-            StatusRowWidget(),
+            StatusRowWidget(postedOn: job.postedOn),
             SizedBox(height: 8),
-            JobDescriptionCard(),
-            SizedBox(height: 24),
-            RequirementsCard(),
-            SizedBox(height: 24),
+            JobDescriptionCard(
+              description: job.description,
+              location: job.location,
+              salary: job.salary.toStringAsFixed(0),
+              salaryType: job.salaryTypeId.name,
+              jobType: job.jobTypeTd.name,
+            ),
+            SizedBox(height: 8),
             ReviewsHeader(onViewAllPressed: () {}),
             RatingCards(),
             SizedBox(height: 24),

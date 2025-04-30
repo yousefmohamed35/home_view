@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:homeview/core/app_colors.dart';
 
 class JobDescriptionCard extends StatelessWidget {
-  const JobDescriptionCard({super.key});
-
+  const JobDescriptionCard({super.key, required this.description, required this.location, required this.jobType, required this.salary, required this.salaryType});
+  final String description;
+  final String location;
+  final String jobType;
+  final String salary;
+  final String salaryType;
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -32,7 +36,7 @@ class JobDescriptionCard extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      _jobDetail(Icons.location_on, "Location", "Cairo"),
+                      _jobDetail(Icons.location_on, "Location", location),
                       SizedBox(height: 12),
                       _jobDetail(Icons.person, "Gender", "Male/Female"),
                     ],
@@ -41,9 +45,9 @@ class JobDescriptionCard extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      _jobDetail(Icons.access_time, "Job Type", "Full Time"),
+                      _jobDetail(Icons.access_time, "Job Type", jobType),
                       SizedBox(height: 12),
-                      _jobDetail(Icons.money, "Salary", "6000-9000 EGP/Month"),
+                      _jobDetail(Icons.money, "Salary", "$salary EGP/$salaryType"),
                     ],
                   ),
                 ],
@@ -56,12 +60,7 @@ class JobDescriptionCard extends StatelessWidget {
   }
 
   List<Widget> _buildJobResponsibilities() {
-    List<String> responsibilities = [
-      "Responding to customer questions and providing the required information",
-      "Assisting customers in solving any problems they encounter with products or services",
-      "Logging customer complaints and working to find solutions",
-      "Informing customers about offers",
-    ];
+    List<String> responsibilities = [description];
     return responsibilities
         .map(
           (text) => Padding(
