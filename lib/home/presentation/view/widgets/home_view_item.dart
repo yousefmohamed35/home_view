@@ -36,10 +36,7 @@ class HomeViewItem extends StatelessWidget {
                 icon: Icons.location_on_outlined,
               ),
               SizedBox(height: 10),
-              InformationItem(
-                text: job.jobTypeTd.toString(),
-                icon: Icons.schedule,
-              ),
+              InformationItem(text: job.jobTypeTd.name, icon: Icons.schedule),
               SizedBox(height: 10),
               InformationItem(
                 text: job.salary.toStringAsFixed(0),
