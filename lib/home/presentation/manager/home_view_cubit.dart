@@ -10,6 +10,7 @@ class HomeViewCubit extends Cubit<HomeViewState> {
   Future<void> getAllJobPosts() async {
     emit(HomeViewLoading());
     var result = await homeRepo.getAllJopPosts();
+    
     result.fold(
       (fail) {
         emit(HomeViewFailure(errorMessage: fail.errorMessage));

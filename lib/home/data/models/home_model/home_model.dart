@@ -1,5 +1,3 @@
-import 'package:homeview/home/data/models/home_model/rating_model.dart';
-
 import 'data.dart';
 
 class HomeModel {
@@ -7,16 +5,15 @@ class HomeModel {
   final int statusCode;
   final String message;
   final Data data;
-  final RatingModel rating;
   HomeModel( {
     required this.isSuccess,
     required this.statusCode,
     required this.message,
-    required this.data, required this.rating,
+    required this.data,
   });
 
-  factory HomeModel.fromJson(Map<String, dynamic> json,RatingModel rating) => HomeModel(
-    rating:rating,
+  factory HomeModel.fromJson(Map<String, dynamic> json,) => HomeModel(
+ 
     isSuccess: json['isSuccess'],
     statusCode: json['statusCode'],
     message: json['message'],
