@@ -41,7 +41,10 @@ class HomeViewItem extends StatelessWidget {
                 icon: Icons.schedule,
               ),
               SizedBox(height: 10),
-              InformationItem(text: '6000 EGP/Month', icon: Icons.money_sharp),
+              InformationItem(
+                text: job.salary.toStringAsFixed(0),
+                icon: Icons.money_sharp,
+              ),
               SizedBox(height: 10),
               CustomRating(),
               SizedBox(height: 20),

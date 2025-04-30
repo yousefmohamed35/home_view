@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:homeview/home/presentation/view/widgets/home_view_item.dart';
 
-import '../../../home/data/models/home_model/home_model.dart';
 
 class SavedView extends StatelessWidget {
   const SavedView({super.key});
