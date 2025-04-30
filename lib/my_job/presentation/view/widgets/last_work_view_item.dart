@@ -20,7 +20,7 @@ class LastWorkViewItem extends StatelessWidget {
       ),
       child: Column(
         children: [
-          HomeViewItemTop(title: ''),
+          HomeViewItemTop(title: '', companyName: ''),
           Divider(
             color: Color(0xff95948F),
             indent: 10,

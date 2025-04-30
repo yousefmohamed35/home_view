@@ -24,7 +24,7 @@ class HomeViewItem extends StatelessWidget {
           padding: const EdgeInsets.all(8),
           child: Column(
             children: [
-              HomeViewItemTop(title: job.title),
+              HomeViewItemTop(title: job.title, companyName: job.companyName),
               Divider(
                 color: Color(0xff95948F),
                 indent: 10,

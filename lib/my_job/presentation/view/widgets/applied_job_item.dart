@@ -26,7 +26,7 @@ class AppliedJobItem extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                HomeViewItemTop(title: ''),
+                HomeViewItemTop(title: '', companyName: '',),
                 Divider(
                   color: Color(0xff95948F),
                   indent: 10,
