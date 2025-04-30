@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:homeview/core/app_colors.dart';
+import 'package:homeview/home/data/models/home_model/datum.dart';
 import 'package:homeview/home/presentation/view/widgets/apply_now_botton.dart';
 import 'package:homeview/home/presentation/view/widgets/call_center.dart';
 import 'package:homeview/home/presentation/view/widgets/custom_app_bar.dart';
@@ -12,8 +13,8 @@ import 'package:homeview/home/presentation/view/widgets/status_row.dart';
 import 'widgets/hiring_team_card.dart';
 
 class JobDescriptionView extends StatelessWidget {
-  const JobDescriptionView({super.key});
-
+  const JobDescriptionView({super.key, required this.job});
+  final Datum job;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +29,7 @@ class JobDescriptionView extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: ListView(
           children: [
-            CallCenterWidget(),
+            CallCenterWidget(title: job.title, companyName: job.companyName),
             SizedBox(height: 8),
             StatusRowWidget(),
             SizedBox(height: 8),
