@@ -1,7 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:homeview/core/error/failure.dart';
-import 'package:homeview/home/data/models/home_model.dart';
+import '../models/home_model/datum.dart';
+
+
 
 abstract class HomeRepo {
-  Future<Either<Failure, List<HomeModel>>> getAllJopPosts();
+  Future<Either<Failure, List<Datum>>> getAllJopPosts();
 }

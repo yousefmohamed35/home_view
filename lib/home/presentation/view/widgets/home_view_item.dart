@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:homeview/home/data/models/home_model.dart';
 import 'package:homeview/home/presentation/view/job_description_view.dart';
 import 'package:homeview/home/presentation/view/widgets/custom_button.dart';
 import '../../../../core/app_colors.dart';
+import '../../../data/models/home_model/datum.dart';
 import 'custom_rating.dart';
 import 'home_view_item_top.dart';
 import 'information_item.dart';
 
 class HomeViewItem extends StatelessWidget {
   const HomeViewItem({super.key, required this.job});
-  final HomeModel job;
+  final Datum job;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -36,7 +36,10 @@ class HomeViewItem extends StatelessWidget {
                 icon: Icons.location_on_outlined,
               ),
               SizedBox(height: 10),
-              InformationItem(text: job.jobType, icon: Icons.schedule),
+              InformationItem(
+                text: job.jobTypeTd.toString(),
+                icon: Icons.schedule,
+              ),
               SizedBox(height: 10),
               InformationItem(text: '6000 EGP/Month', icon: Icons.money_sharp),
               SizedBox(height: 10),

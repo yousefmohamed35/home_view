@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 
 class ApiService {
-  final String _baseUrl = 'http://shiftswift.runasp.net/api/';
+  final String _baseUrl = 'http://shiftswift.tryasp.net/api/';
   final Dio _dio;
 
   ApiService(this._dio);

@@ -2,8 +2,9 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:homeview/core/error/failure.dart';
 import 'package:homeview/core/service/api_service.dart';
-import 'package:homeview/home/data/models/home_model.dart';
+import 'package:homeview/home/data/models/home_model/datum.dart';
 import 'package:homeview/home/data/repos/home_repo.dart';
+import '../models/home_model/home_model.dart';
 
 class HomeRepoImpl implements HomeRepo {
   final ApiService apiService;
@@ -11,15 +12,13 @@ class HomeRepoImpl implements HomeRepo {
   HomeRepoImpl(this.apiService);
 
   @override
-  Future<Either<Failure, List<HomeModel>>> getAllJopPosts() async {
+  Future<Either<Failure, List<Datum>>> getAllJopPosts() async {
     try {
       var data = await apiService.get(
         endPoint: 'Home/GetRandomJobs',
       ); // Corrected the variable name
-      List<HomeModel> jobs = [];
-      for (var job in data['data']) {
-        jobs.add(HomeModel.fromJson(job));
-      }
+      HomeModel allData = HomeModel.fromJson(data);
+      List<Datum> jobs = allData.data.data;
       return right(jobs);
     } on Exception catch (e) {
       if (e is DioException) {

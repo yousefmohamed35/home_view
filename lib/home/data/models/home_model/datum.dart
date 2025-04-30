@@ -7,7 +7,7 @@ final  String description;
 final  String location;
 final  DateTime postedOn;
 final  int salaryTypeId;
-final  int salary;
+final  double salary;
 final  int jobTypeTd;
 
 
