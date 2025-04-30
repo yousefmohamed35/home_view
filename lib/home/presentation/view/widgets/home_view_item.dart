@@ -39,7 +39,8 @@ class HomeViewItem extends StatelessWidget {
               InformationItem(text: job.jobTypeTd.name, icon: Icons.schedule),
               SizedBox(height: 10),
               InformationItem(
-                text: job.salary.toStringAsFixed(0),
+                text:
+                    "${job.salary.toStringAsFixed(0)} EGP/${job.salaryTypeId.name}",
                 icon: Icons.money_sharp,
               ),
               SizedBox(height: 10),

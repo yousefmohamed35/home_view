@@ -1,5 +1,7 @@
 import '../../enums/job_type.dart';
+import '../../enums/salary_type.dart';
 import '../../extension/job_type_extension.dart';
+import '../../extension/salary_type_extension.dart';
 
 class Datum {
   final String id;
@@ -9,7 +11,7 @@ class Datum {
   final String description;
   final String location;
   final DateTime postedOn;
-  final int salaryTypeId;
+  final SalaryType salaryTypeId;
   final double salary;
   final JobType jobTypeTd;
 
@@ -21,7 +23,7 @@ class Datum {
     description: json['description'],
     location: json['location'],
     postedOn: DateTime.parse(json['postedOn'] as String),
-    salaryTypeId: json['salaryTypeId'],
+    salaryTypeId: SalaryTypeExtension.fromId(json['salaryTypeId']),
     salary: json['salary'],
     jobTypeTd: JobTypeExtension.fromId(json['jobTypeTd']),
   );
