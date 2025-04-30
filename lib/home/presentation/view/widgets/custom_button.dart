@@ -4,7 +4,12 @@ import 'package:homeview/core/app_colors.dart';
 import 'package:homeview/core/styles.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key, required this.text, this.isIcon = false, this.onTap});
+  const CustomButton({
+    super.key,
+    required this.text,
+    this.isIcon = false,
+    this.onTap,
+  });
   final String text;
   final bool isIcon;
   final void Function()? onTap;

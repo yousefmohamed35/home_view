@@ -18,7 +18,10 @@ class SearchHistoryList extends StatelessWidget {
       itemBuilder: (context, index) {
         return ListTile(
           leading: Icon(Icons.history_rounded, color: AppColors.borderColor),
-          title: Text(searchHistory[index], style: TextStyle(color: AppColors.borderColor)),
+          title: Text(
+            searchHistory[index],
+            style: TextStyle(color: AppColors.borderColor),
+          ),
           trailing: IconButton(
             icon: Icon(Icons.close, color: AppColors.borderColor),
             onPressed: () => onRemoveItem(index),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:homeview/core/app_colors.dart';
 
-
 class ReviewsHeader extends StatelessWidget {
   final VoidCallback onViewAllPressed;
 
@@ -12,10 +11,7 @@ class ReviewsHeader extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
-          'Reviews',
-          style: TextStyle(fontSize: 25),
-        ),
+        Text('Reviews', style: TextStyle(fontSize: 25)),
         TextButton(
           onPressed: onViewAllPressed,
           child: Text(

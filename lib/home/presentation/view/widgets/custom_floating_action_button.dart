@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:homeview/core/app_colors.dart';
 
 class CustomFloatingActionButton extends StatelessWidget {
-  const CustomFloatingActionButton({super.key, required this.isSelected, required this.onTap});
+  const CustomFloatingActionButton({
+    super.key,
+    required this.isSelected,
+    required this.onTap,
+  });
   final void Function() onTap;
   final bool isSelected;
   @override

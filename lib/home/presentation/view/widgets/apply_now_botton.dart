@@ -8,16 +8,14 @@ class ApplyNowButton extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 16),
       child: SizedBox(
-        width: double.infinity, 
-        height: 50, 
+        width: double.infinity,
+        height: 50,
         child: ElevatedButton(
-          onPressed: () {
-            
-          },
+          onPressed: () {},
           style: ElevatedButton.styleFrom(
-            backgroundColor: Color(0xFF2D5C88), 
+            backgroundColor: Color(0xFF2D5C88),
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12), 
+              borderRadius: BorderRadius.circular(12),
             ),
           ),
           child: Text(

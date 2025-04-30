@@ -26,7 +26,10 @@ class _FilterPageState extends State<FilterView> {
       backgroundColor: AppColors.main,
       appBar: AppBar(
         backgroundColor: AppColors.main,
-        title: Text('Filter', style: TextStyle(color: AppColors.blue, fontSize: 23)),
+        title: Text(
+          'Filter',
+          style: TextStyle(color: AppColors.blue, fontSize: 23),
+        ),
         leading: IconButton(
           icon: Icon(Icons.arrow_back_ios_new, color: AppColors.borderColor),
           onPressed: () {
@@ -58,15 +61,18 @@ class _FilterPageState extends State<FilterView> {
               SalarySection(
                 minSalary: minSalary,
                 maxSalary: maxSalary,
-                onMinSalaryChanged: (value) => setState(() => minSalary = value),
-                onMaxSalaryChanged: (value) => setState(() => maxSalary = value),
+                onMinSalaryChanged:
+                    (value) => setState(() => minSalary = value),
+                onMaxSalaryChanged:
+                    (value) => setState(() => maxSalary = value),
               ),
 
               // Section: Area
               SizedBox(height: 16),
               AreaSection(
                 area: area,
-                onAreaChanged: (value) => setState(() => area = value ?? 'Choose'),
+                onAreaChanged:
+                    (value) => setState(() => area = value ?? 'Choose'),
               ),
 
               // Button: Show Results
@@ -77,14 +83,19 @@ class _FilterPageState extends State<FilterView> {
                 },
                 style: ButtonStyle(
                   backgroundColor: WidgetStateProperty.all(AppColors.blue),
-                  minimumSize: WidgetStateProperty.all(Size(double.infinity, 50)),
+                  minimumSize: WidgetStateProperty.all(
+                    Size(double.infinity, 50),
+                  ),
                   shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                     RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
                   ),
                 ),
-                child: Text('Show Results', style: TextStyle(color: Colors.white, fontSize: 20)),
+                child: Text(
+                  'Show Results',
+                  style: TextStyle(color: Colors.white, fontSize: 20),
+                ),
               ),
             ],
           ),

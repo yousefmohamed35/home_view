@@ -33,9 +33,7 @@ class HiringTeamCard extends StatelessWidget {
             children: [
               CircleAvatar(
                 radius: 20,
-                backgroundImage: AssetImage(
-                  "assets/images/Frame 953.png",
-                ), 
+                backgroundImage: AssetImage("assets/images/Frame 953.png"),
               ),
               SizedBox(width: 10),
               Column(

@@ -10,11 +10,11 @@ class HomeViewLoading extends HomeViewState {}
 class HomeViewFailure extends HomeViewState {
   final String errorMessage;
 
- HomeViewFailure({required this.errorMessage});
+  HomeViewFailure({required this.errorMessage});
 }
 
 class HomeViewSuccess extends HomeViewState {
- final List<HomeModel> jobs;
+  final List<HomeModel> jobs;
 
   HomeViewSuccess({required this.jobs});
 }

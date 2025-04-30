@@ -5,9 +5,7 @@ import '../../../../core/app_colors.dart';
 import '../../../../core/styles.dart';
 
 class CustomRating extends StatelessWidget {
-  const CustomRating({
-    super.key,
-  });
+  const CustomRating({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,9 +27,7 @@ class CustomRating extends StatelessWidget {
         Text(
           '(51,365 Reviews)',
           style: GoogleFonts.lato(
-            textStyle: AppStyles.medium14.copyWith(
-              color: AppColors.blue,
-            ),
+            textStyle: AppStyles.medium14.copyWith(color: AppColors.blue),
           ),
         ),
       ],

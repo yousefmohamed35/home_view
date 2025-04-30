@@ -21,7 +21,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
   static final List<Widget> _pages = [
     const HomeView(),
     const SizedBox(),
-   const MyJobView(),
+    const MyJobView(),
   ];
 
   void _onItemTapped(int index) {

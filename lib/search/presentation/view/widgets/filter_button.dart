@@ -23,13 +23,10 @@ class FilterButton extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
             color: selectedValue == value ? AppColors.blue : Colors.transparent,
-            border: Border.all(
-              color: AppColors.blue, 
-              width: 1.5, 
-            ),
-            borderRadius: BorderRadius.circular(30), 
+            border: Border.all(color: AppColors.blue, width: 1.5),
+            borderRadius: BorderRadius.circular(30),
           ),
-          padding: const EdgeInsets.symmetric(vertical: 7, horizontal: 16), 
+          padding: const EdgeInsets.symmetric(vertical: 7, horizontal: 16),
           alignment: Alignment.center,
           child: Text(
             text,
