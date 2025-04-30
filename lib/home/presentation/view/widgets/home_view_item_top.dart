@@ -7,7 +7,11 @@ import 'title_widget.dart';
 import 'trending_now_item.dart';
 
 class HomeViewItemTop extends StatelessWidget {
-  const HomeViewItemTop({super.key, required this.title, required this.companyName});
+  const HomeViewItemTop({
+    super.key,
+    required this.title,
+    required this.companyName,
+  });
   final String title;
   final String companyName;
   @override

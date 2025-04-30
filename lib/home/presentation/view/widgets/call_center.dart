@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 class CallCenterWidget extends StatelessWidget {
-  const CallCenterWidget({super.key, required this.title, required this.companyName});
+  const CallCenterWidget({
+    super.key,
+    required this.title,
+    required this.companyName,
+  });
   final String title;
   final String companyName;
   @override

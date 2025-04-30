@@ -31,9 +31,7 @@ class RequirementsCard extends StatelessWidget {
   }
 
   List<Widget> _buildRequirementsList() {
-    List<String> requirements = [
-      requirement
-    ];
+    List<String> requirements = [requirement];
 
     return requirements
         .map(

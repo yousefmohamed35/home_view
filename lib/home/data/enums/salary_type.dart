@@ -1,5 +1,1 @@
-enum SalaryType {
-  month,
-  hour,
-  contract,
-}
+enum SalaryType { month, hour, contract }

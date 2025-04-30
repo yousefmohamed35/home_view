@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class SavedView extends StatelessWidget {
   const SavedView({super.key});
 

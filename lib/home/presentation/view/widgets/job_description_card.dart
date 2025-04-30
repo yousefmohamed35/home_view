@@ -2,7 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:homeview/core/app_colors.dart';
 
 class JobDescriptionCard extends StatelessWidget {
-  const JobDescriptionCard({super.key, required this.description, required this.location, required this.jobType, required this.salary, required this.salaryType});
+  const JobDescriptionCard({
+    super.key,
+    required this.description,
+    required this.location,
+    required this.jobType,
+    required this.salary,
+    required this.salaryType,
+  });
   final String description;
   final String location;
   final String jobType;
@@ -47,7 +54,11 @@ class JobDescriptionCard extends StatelessWidget {
                     children: [
                       _jobDetail(Icons.access_time, "Job Type", jobType),
                       SizedBox(height: 12),
-                      _jobDetail(Icons.money, "Salary", "$salary EGP/$salaryType"),
+                      _jobDetail(
+                        Icons.money,
+                        "Salary",
+                        "$salary EGP/$salaryType",
+                      ),
                     ],
                   ),
                 ],

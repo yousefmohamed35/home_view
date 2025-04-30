@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:timeago/timeago.dart' as timeago;
+
 class StatusRowWidget extends StatelessWidget {
   const StatusRowWidget({super.key, required this.postedOn});
   final DateTime postedOn;
