@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:homeview/core/app_colors.dart';
 import 'package:homeview/home/data/models/home_model/datum.dart';
+import 'package:homeview/home/data/models/home_model/rating_model.dart';
 import 'package:homeview/home/presentation/view/widgets/apply_now_botton.dart';
 import 'package:homeview/home/presentation/view/widgets/call_center.dart';
 import 'package:homeview/home/presentation/view/widgets/custom_app_bar.dart';
@@ -12,8 +13,9 @@ import 'package:homeview/home/presentation/view/widgets/status_row.dart';
 import 'widgets/hiring_team_card.dart';
 
 class JobDescriptionView extends StatelessWidget {
-  const JobDescriptionView({super.key, required this.job});
+  const JobDescriptionView({super.key, required this.job, required this.rating});
   final Datum job;
+  final RatingModel rating;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,7 +43,7 @@ class JobDescriptionView extends StatelessWidget {
             ),
             SizedBox(height: 8),
             ReviewsHeader(onViewAllPressed: () {}),
-            RatingCards(),
+            RatingCards(rating: rating),
             SizedBox(height: 24),
             HiringTeamCard(),
             SizedBox(height: 24),

@@ -20,8 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create:
-          (context) =>
-              HomeViewCubit(getIt.get<HomeRepoImpl>())..getAllJobPosts(),
+          (context) => HomeViewCubit(getIt.get<HomeRepoImpl>())..getAllJob(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         home: CustomBottomNavigationBar(),

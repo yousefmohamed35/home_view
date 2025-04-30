@@ -45,7 +45,7 @@ class AppliedJobItem extends StatelessWidget {
                   icon: Icons.money_sharp,
                 ),
                 SizedBox(height: 10),
-                CustomRating(),
+                CustomRating(rating: '', review: 0),
                 SizedBox(height: 20),
                 Container(
                   padding: EdgeInsets.all(4),
