@@ -26,8 +26,8 @@ class HomeViewItem extends StatelessWidget {
           child: Column(
             children: [
               HomeViewItemTop(
-                title: job.datum.title,
-                companyName: job.datum.companyName,
+                title: job.jobDataModel.title,
+                companyName: job.jobDataModel.companyName,
               ),
               Divider(
                 color: Color(0xff95948F),
@@ -36,18 +36,18 @@ class HomeViewItem extends StatelessWidget {
                 height: 20,
               ),
               InformationItem(
-                text: job.datum.location,
+                text: job.jobDataModel.location,
                 icon: Icons.location_on_outlined,
               ),
               SizedBox(height: 10),
               InformationItem(
-                text: job.datum.jobTypeTd.name,
+                text: job.jobDataModel.jobTypeTd.name,
                 icon: Icons.schedule,
               ),
               SizedBox(height: 10),
               InformationItem(
                 text:
-                    "${job.datum.salary.toStringAsFixed(0)} EGP/${job.datum.salaryTypeId.name}",
+                    "${job.jobDataModel.salary.toStringAsFixed(0)} EGP/${job.jobDataModel.salaryTypeId.name}",
                 icon: Icons.money_sharp,
               ),
               SizedBox(height: 10),
@@ -59,7 +59,7 @@ class HomeViewItem extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  SavedBlocConsumerButton(jobId: job.datum.id),
+                  SavedBlocConsumerButton(jobId: job.jobDataModel.id),
                   CustomButton(
                     text: 'View',
                     onTap: () {
@@ -68,7 +68,7 @@ class HomeViewItem extends StatelessWidget {
                         MaterialPageRoute(
                           builder: (context) {
                             return JobDescriptionView(
-                              job: job.datum,
+                              job: job.jobDataModel,
                               rating: job.ratingModel,
                             );
                           },

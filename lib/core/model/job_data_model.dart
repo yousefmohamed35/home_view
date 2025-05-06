@@ -1,9 +1,9 @@
-import '../../enums/job_type.dart';
-import '../../enums/salary_type.dart';
-import '../../extension/job_type_extension.dart';
-import '../../extension/salary_type_extension.dart';
+import '../../home/data/enums/job_type.dart';
+import '../../home/data/enums/salary_type.dart';
+import '../../home/data/extension/job_type_extension.dart';
+import '../../home/data/extension/salary_type_extension.dart';
 
-class Datum {
+class JobDataModel {
   final String id;
   final String companyId;
   final String companyName;
@@ -15,7 +15,7 @@ class Datum {
   final double salary;
   final JobType jobTypeTd;
 
-  factory Datum.fromJson(Map<String, dynamic> json) => Datum(
+  factory JobDataModel.fromJson(Map<String, dynamic> json) => JobDataModel(
     id: json['id'],
     companyId: json['companyId'],
     companyName: json['companyName'],
@@ -28,7 +28,7 @@ class Datum {
     jobTypeTd: JobTypeExtension.fromId(json['jobTypeTd']),
   );
 
-  Datum({
+  JobDataModel({
     required this.id,
     required this.companyId,
     required this.companyName,

@@ -1,12 +1,11 @@
 import 'package:dartz/dartz.dart';
 import 'package:homeview/core/error/failure.dart';
 import 'package:homeview/core/service/api_service.dart';
-import 'package:homeview/home/data/models/home_model/datum.dart';
 import 'package:homeview/home/data/models/home_model/job_added_model.dart';
 import 'package:homeview/home/data/models/home_model/job_model.dart';
-import 'package:homeview/home/data/models/home_model/rating_model.dart';
+import 'package:homeview/core/model/rating_model.dart';
 import 'package:homeview/home/data/repos/home_repo.dart';
-import '../models/home_model/home_model.dart';
+import '../../../core/model/job_data_model.dart';
 
 class HomeRepoImpl implements HomeRepo {
   final ApiService apiService;
@@ -14,12 +13,15 @@ class HomeRepoImpl implements HomeRepo {
   HomeRepoImpl(this.apiService);
 
   @override
-  Future<List<Datum>> getAllJopPosts() async {
-    var data = await apiService.get(
+  Future<List<JobDataModel>> getAllJopPosts() async {
+    var response = await apiService.get(
       endPoint: 'Home/GetRandomJobs',
     ); // Corrected the variable name
-    HomeModel allData = HomeModel.fromJson(data);
-    List<Datum> jobs = allData.data.data;
+
+    List<dynamic> dataList = response['data']['data'];
+    List<JobDataModel> jobs =
+        dataList.map((job) => JobDataModel.fromJson(job)).toList();
+
     return (jobs);
   }
 
@@ -37,7 +39,7 @@ class HomeRepoImpl implements HomeRepo {
       List<JobModel> mergedJobs = [];
       for (var job in jobsResult) {
         var rating = await getAllCompanyRating(companyId: job.companyId);
-        mergedJobs.add(JobModel(datum: job, ratingModel: rating));
+        mergedJobs.add(JobModel(jobDataModel: job, ratingModel: rating));
       }
       return right(mergedJobs);
     } on Exception catch (e) {
