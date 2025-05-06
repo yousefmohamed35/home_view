@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:homeview/home/data/models/home_model/job_model.dart';
-import 'package:homeview/home/presentation/manager/added_job_cubit.dart';
 import 'package:homeview/home/presentation/view/job_description_view.dart';
 import 'package:homeview/home/presentation/view/widgets/custom_button.dart';
 import '../../../../core/app_colors.dart';
 import 'custom_rating.dart';
 import 'home_view_item_top.dart';
 import 'information_item.dart';
+import 'saved_bloc_consumer_button.dart';
 
 class HomeViewItem extends StatelessWidget {
   const HomeViewItem({super.key, required this.job});
@@ -60,33 +59,7 @@ class HomeViewItem extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  BlocConsumer<Addedjobcubit, AddedjobState>(
-                    listener: (context, state) {
-                      if (state is AddedjobcubitSuccess) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text(state.jobAddedModel.message!)),
-                        );
-                      }
-                      if (state is AddedjobcubitFailure) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text('Job is already saved')),
-                        );
-                      }
-                    },
-                    builder: (context, state) {
-                      return CustomButton(
-                        text: 'Save',
-                        isIcon: true,
-                        onTap: () {
-                          BlocProvider.of<Addedjobcubit>(context).savedJob(
-                            jobId: job.datum.id,
-                            
-                            memberId: 'ffee3bb9-8cc6-492a-9d4d-7c2d0741b4fb',
-                          );
-                        },
-                      );
-                    },
-                  ),
+                  SavedBlocConsumerButton(jobId: job.datum.id),
                   CustomButton(
                     text: 'View',
                     onTap: () {
