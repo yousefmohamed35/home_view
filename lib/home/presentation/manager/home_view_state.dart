@@ -15,6 +15,6 @@ class HomeViewFailure extends HomeViewState {
 
 class HomeViewSuccess extends HomeViewState {
   final List<JobModel> jobs;
-  
+
   HomeViewSuccess({required this.jobs});
 }

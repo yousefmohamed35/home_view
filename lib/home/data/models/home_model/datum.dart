@@ -1,5 +1,3 @@
-
-
 import '../../enums/job_type.dart';
 import '../../enums/salary_type.dart';
 import '../../extension/job_type_extension.dart';
@@ -18,7 +16,6 @@ class Datum {
   final JobType jobTypeTd;
 
   factory Datum.fromJson(Map<String, dynamic> json) => Datum(
-  
     id: json['id'],
     companyId: json['companyId'],
     companyName: json['companyName'],
@@ -28,9 +25,7 @@ class Datum {
     postedOn: DateTime.parse(json['postedOn'] as String),
     salaryTypeId: SalaryTypeExtension.fromId(json['salaryTypeId']),
     salary: json['salary'],
-    jobTypeTd: JobTypeExtension.fromId(json['jobTypeTd'],
-    
-    ),
+    jobTypeTd: JobTypeExtension.fromId(json['jobTypeTd']),
   );
 
   Datum({

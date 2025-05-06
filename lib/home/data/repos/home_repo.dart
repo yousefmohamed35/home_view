@@ -6,6 +6,6 @@ import '../models/home_model/rating_model.dart';
 
 abstract class HomeRepo {
   Future<List<Datum>> getAllJopPosts();
-   Future<RatingModel> getAllCompanyRating({required String companyId});
-   Future<Either<Failure, List<JobModel>>> getAllJob();
+  Future<RatingModel> getAllCompanyRating({required String companyId});
+  Future<Either<Failure, List<JobModel>>> getAllJob();
 }

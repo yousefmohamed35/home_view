@@ -13,7 +13,11 @@ import 'package:homeview/home/presentation/view/widgets/status_row.dart';
 import 'widgets/hiring_team_card.dart';
 
 class JobDescriptionView extends StatelessWidget {
-  const JobDescriptionView({super.key, required this.job, required this.rating});
+  const JobDescriptionView({
+    super.key,
+    required this.job,
+    required this.rating,
+  });
   final Datum job;
   final RatingModel rating;
   @override

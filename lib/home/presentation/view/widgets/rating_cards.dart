@@ -4,7 +4,6 @@ import 'package:homeview/core/app_colors.dart';
 import 'package:homeview/core/styles.dart';
 import 'package:homeview/home/data/models/home_model/rating_model.dart';
 
-
 class RatingCards extends StatelessWidget {
   const RatingCards({super.key, required this.rating});
   final RatingModel rating;

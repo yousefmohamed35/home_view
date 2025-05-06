@@ -38,7 +38,7 @@ class CompanyReviewItem extends StatelessWidget {
               TitleWidget(text: 'Abstergo Ltd', size: 14),
             ],
           ),
-          CustomRating(rating: '', review: 0,),
+          CustomRating(rating: '', review: 0),
         ],
       ),
     );
