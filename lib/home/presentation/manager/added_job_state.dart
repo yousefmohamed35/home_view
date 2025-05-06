@@ -11,3 +11,9 @@ class AddedjobcubitSuccess extends AddedjobState {
 
   AddedjobcubitSuccess({required this.jobAddedModel});
 }
+
+class AddedjobcubitFailure extends AddedjobState {
+  final String erorrMessage;
+
+  AddedjobcubitFailure({required this.erorrMessage});
+}
