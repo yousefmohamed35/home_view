@@ -12,6 +12,7 @@ class CustomButton extends StatelessWidget {
   });
   final String text;
   final bool isIcon;
+
   final void Function()? onTap;
   @override
   Widget build(BuildContext context) {

@@ -25,6 +25,7 @@ class SavedBlocConsumerButton extends StatelessWidget {
       },
       builder: (context, state) {
         return CustomButton(
+         
           text: 'Save',
           isIcon: true,
           onTap: () {
