@@ -57,7 +57,7 @@ class HomeRepoImpl implements HomeRepo {
             'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImZmZWUzYmI5LThjYzYtNDkyYS05ZDRkLTdjMmQwNzQxYjRmYiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJ5b3VzZWYiLCJlbWFpbCI6InlvdUBnbWFpbC5jb20iLCJqdGkiOiI2Y2I1ZWEwNC0yZjI3LTQyYWItOGYyYS04ZmQ2YzYzNTA4MzciLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJNZW1iZXIiLCJleHAiOjE3NDczOTgzMzUsImlzcyI6IlNoaWZ0U3dpZnQuQ29tIiwiYXVkIjoiU2hpZnRTd2lmdCJ9.Vtlj1vpqGse825B8hpBP_Q-3lsCgVLF-S40dX795ZhA',
       );
 
-      JobAddedModel saveJob = JobAddedModel.fromJson(response.data);
+      JobAddedModel saveJob = JobAddedModel.fromJson(response);
       return right(saveJob);
     } on Exception catch (e) {
       return left(ServerFailure(errorMessage: e.toString()));

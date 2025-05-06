@@ -11,7 +11,7 @@ class ApiService {
     return response.data;
   }
 
-  Future<Response> post({
+  Future<Map<String, dynamic>> post({
     required String endPoint,
     required String token,
     Map<String, String>? header,
@@ -19,7 +19,7 @@ class ApiService {
     var response = await _dio.post(
       '$_baseUrl$endPoint',
       options: Options(
-        contentType: 'application/json; charset=utf-8',
+  
         headers: header ?? {'Authorization': 'Bearer $token'},
       ),
     );
