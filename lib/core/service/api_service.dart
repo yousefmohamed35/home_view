@@ -19,11 +19,13 @@ class ApiService {
     required String endPoint,
     required String token,
     Map<String, String>? header,
+    Map<String, dynamic>? body,
   }) async {
     var response = await _dio.post(
       '$_baseUrl$endPoint',
+      data: body,
       options: Options(
-  
+        
         headers: header ?? {'Authorization': 'Bearer $token'},
       ),
     );
