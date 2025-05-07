@@ -6,6 +6,7 @@ import 'package:homeview/home/data/models/home_model/job_model.dart';
 import 'package:homeview/core/model/rating_model.dart';
 import 'package:homeview/home/data/repos/home_repo.dart';
 import '../../../core/model/job_data_model.dart';
+import '../../presentation/view/widgets/ids.dart';
 
 class HomeRepoImpl implements HomeRepo {
   final ApiService apiService;
@@ -56,7 +57,7 @@ class HomeRepoImpl implements HomeRepo {
       var response = await apiService.post(
         endPoint: 'Member/SaveJob?JobId=$jobId&MemberId=$memberId',
         token:
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImRlOGUwMTc0LWFmZGQtNDA3OS04NTYwLTkwNjk2MzVkMTNiOSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJ5b3VzZWYiLCJlbWFpbCI6InlvdXNlZkBnbWFpbC5jb20iLCJqdGkiOiI0ODI4NDRjOS1mMGQ4LTRkOGMtYjRjNS1lNGRlNjRmYjNlNGEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJNZW1iZXIiLCJleHAiOjE3NDc0ODg3ODgsImlzcyI6IlNoaWZ0U3dpZnQuQ29tIiwiYXVkIjoiU2hpZnRTd2lmdCJ9.U55sLk-Id60WPlsGOaFCrymmVIFbnoQy3V5G3I4zyMY',
+           Ids.token,
       );
 
       JobAddedModel saveJob = JobAddedModel.fromJson(response);
@@ -67,16 +68,12 @@ class HomeRepoImpl implements HomeRepo {
   }
 
   @override
-  Future<Either<Failure, JobAddedModel>> addAppliedJob({
-    required String jobId,
-    required String memberId,
-    required body,
-  }) async {
+  Future<Either<Failure, JobAddedModel>> addAppliedJob({required Map<String, dynamic> body}) async {
     try {
       var response = await apiService.post(
         endPoint: 'Member/AddJobApplication',
         token:
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImRlOGUwMTc0LWFmZGQtNDA3OS04NTYwLTkwNjk2MzVkMTNiOSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJ5b3VzZWYiLCJlbWFpbCI6InlvdXNlZkBnbWFpbC5jb20iLCJqdGkiOiI0ODI4NDRjOS1mMGQ4LTRkOGMtYjRjNS1lNGRlNjRmYjNlNGEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJNZW1iZXIiLCJleHAiOjE3NDc0ODg3ODgsImlzcyI6IlNoaWZ0U3dpZnQuQ29tIiwiYXVkIjoiU2hpZnRTd2lmdCJ9.U55sLk-Id60WPlsGOaFCrymmVIFbnoQy3V5G3I4zyMY',
+           Ids.token,
         body: body,
       );
       JobAddedModel applyJob = JobAddedModel.fromJson(response);

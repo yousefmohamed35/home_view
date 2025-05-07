@@ -18,7 +18,7 @@ class MyJobView extends StatelessWidget {
           create: (context) => MyJobCubit(getIt<MyJobRepoImpl>())..getAllJob(memberId: 'de8e0174-afdd-4079-8560-9069635d13b9'),
         ),
         BlocProvider<ApliedJobCubit>(
-          create: (context) => ApliedJobCubit(getIt<MyJobRepoImpl>())..getAllAppliedJob(memberId: 'de8e0174-afdd-4079-8560-9069635d13b9'),
+          create: (context) => ApliedJobCubit(getIt<MyJobRepoImpl>())..getAllAppliedJob(memberId: '50fb5984-9dae-488e-9b6f-1e90c696ff65'),
         ),
       ],
       child: Scaffold(appBar: buildMyJobAppBar(context), body: MyJobViewBody()),

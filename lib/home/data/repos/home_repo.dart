@@ -10,5 +10,5 @@ abstract class HomeRepo {
   Future<RatingModel> getAllCompanyRating({required String companyId});
   Future<Either<Failure, List<JobModel>>> getAllJob();
   Future<Either<Failure, JobAddedModel>> addSavedJobs({required String jobId,required String memberId});
-  Future<Either<Failure, JobAddedModel>> addAppliedJob({required String jobId,required String memberId,required body});
+  Future<Either<Failure, JobAddedModel>> addAppliedJob({required Map<String, dynamic> body});
 }

@@ -18,7 +18,6 @@ class ApiService {
   Future<Map<String, dynamic>> post({
     required String endPoint,
     required String token,
-    Map<String, String>? header,
     Map<String, dynamic>? body,
   }) async {
     var response = await _dio.post(
@@ -26,7 +25,7 @@ class ApiService {
       data: body,
       options: Options(
         
-        headers: header ?? {'Authorization': 'Bearer $token'},
+        headers: {'Authorization': 'Bearer $token'},
       ),
     );
     return response.data;

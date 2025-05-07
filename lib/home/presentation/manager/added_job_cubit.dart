@@ -22,9 +22,9 @@ class Addedjobcubit extends Cubit<AddedjobState> {
       },
     );
   }
-  Future<void> appliedJob({required String jobId,required String memberId,required body}) async {
+  Future<void> appliedJob({required Map<String, dynamic> body}) async {
     emit(AddedjobcubitLoading());
-    var result = await homeRepo.addAppliedJob(jobId: jobId, memberId: memberId,body: body);
+    var result = await homeRepo.addAppliedJob(body: body);
     result.fold(
       (fail) {
         emit(AddedjobcubitFailure(erorrMessage: fail.errorMessage));

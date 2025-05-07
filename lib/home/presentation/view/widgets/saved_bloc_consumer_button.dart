@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../manager/added_job_cubit.dart';
 import 'custom_button.dart';
+import 'ids.dart';
 
 class SavedBlocConsumerButton extends StatelessWidget {
   const SavedBlocConsumerButton({super.key, required this.jobId});
@@ -30,7 +31,7 @@ class SavedBlocConsumerButton extends StatelessWidget {
           onTap: () {
             BlocProvider.of<Addedjobcubit>(context).savedJob(
               jobId: jobId,
-              memberId: 'de8e0174-afdd-4079-8560-9069635d13b9',
+              memberId: Ids.memberId,
             );
           },
         );
