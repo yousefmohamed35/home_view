@@ -1,6 +1,3 @@
-
-
-
 import '../../../home/data/models/home_model/job_model.dart';
 
 abstract class MyJobState {}
