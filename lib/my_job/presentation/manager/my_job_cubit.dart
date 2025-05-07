@@ -5,10 +5,16 @@ import 'my_job_state.dart';
 
 class MyJobCubit extends Cubit<MyJobState> {
   MyJobCubit(this.myJobRepo) : super(MyJobInitial());
-  final MyJobRepo myJobRepo; 
-  Future<void> getAllJob({required String memberId}) async {
+  final MyJobRepo myJobRepo;
+  Future<void> getAllJob({
+    required String memberId,
+    required String endPoints,
+  }) async {
     emit(MyJoboading());
-    var result = await myJobRepo.getAllSavedJob(memberId: memberId);
+    var result = await myJobRepo.getAllSavedJob(
+      memberId: memberId,
+      endPoints: endPoints,
+    );
 
     result.fold(
       (fail) {

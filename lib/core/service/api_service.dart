@@ -6,8 +6,12 @@ class ApiService {
 
   ApiService(this._dio);
 
-  Future<Map<String, dynamic>> get({required String endPoint}) async {
-    var response = await _dio.get('$_baseUrl$endPoint');
+  Future<Map<String, dynamic>> get({required String endPoint,String? token}) async {
+    var response = await _dio.get('$_baseUrl$endPoint',options: Options(
+      headers: {
+        'Authorization':'Bearer $token'
+      }
+    ));
     return response.data;
   }
 
