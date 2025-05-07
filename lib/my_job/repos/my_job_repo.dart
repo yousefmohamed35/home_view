@@ -7,6 +7,8 @@ import '../../home/data/models/home_model/job_model.dart';
 
 abstract class MyJobRepo {
   Future<RatingModel> getAllCompanyRating({required String companyId});
-  Future<List<JobDataModel>> getAllJobs({required String memberId,required String endPoints});
-  Future<Either<Failure, List<JobModel>>> getAllSavedJob({required String memberId,required String endPoints});
+  Future<List<JobDataModel>> getAllJobs({required String memberId});
+  Future<List<JobDataModel>> getAppliedJobs({required String memberId});
+  Future<Either<Failure, List<JobModel>>> getAllSavedJob({required String memberId});
+ Future<Either<Failure, List<JobModel>>> getAllAppliedJob({required String memberId}); 
 }

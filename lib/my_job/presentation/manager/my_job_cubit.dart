@@ -8,12 +8,12 @@ class MyJobCubit extends Cubit<MyJobState> {
   final MyJobRepo myJobRepo;
   Future<void> getAllJob({
     required String memberId,
-    required String endPoints,
+
   }) async {
     emit(MyJoboading());
     var result = await myJobRepo.getAllSavedJob(
       memberId: memberId,
-      endPoints: endPoints,
+    
     );
 
     result.fold(
