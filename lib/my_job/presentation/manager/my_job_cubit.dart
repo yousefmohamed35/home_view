@@ -13,7 +13,6 @@ class MyJobCubit extends Cubit<MyJobState> {
     emit(MyJoboading());
     var result = await myJobRepo.getAllSavedJob(
       memberId: memberId,
-    
     );
 
     result.fold(

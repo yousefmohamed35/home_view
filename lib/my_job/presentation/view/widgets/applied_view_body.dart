@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:homeview/my_job/presentation/manager/my_job_cubit.dart';
-import 'package:homeview/my_job/presentation/manager/my_job_state.dart';
+import 'package:homeview/my_job/presentation/manager/aplied_job_cubit.dart';
+import 'package:homeview/my_job/presentation/manager/aplied_job_state.dart';
 import 'package:homeview/my_job/presentation/view/no_saved_view.dart';
 
 import 'applied_job_item.dart';
@@ -11,10 +11,10 @@ class AppliedViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<MyJobCubit, MyJobState>(
+    return BlocConsumer<ApliedJobCubit, AppliedJobState>(
       listener: (context, state) {},
       builder: (context, state) {
-        if (state is MyJobSuccess) {
+        if (state is AppliedJobSuccess) {
           if (state.jobs.isNotEmpty) {
             return SingleChildScrollView(
               child: Padding(
@@ -32,7 +32,7 @@ class AppliedViewBody extends StatelessWidget {
           } else {
             return NoSavedView();
           }
-        } else if (state is MyJobFailure) {
+        } else if (state is AppliedJobFailure) {
           return Center(child: Text(state.errorMessage));
         } else {
           return Center(child: CircularProgressIndicator());

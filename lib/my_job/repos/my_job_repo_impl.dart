@@ -1,10 +1,11 @@
+import 'dart:developer';
+
 import 'package:dartz/dartz.dart';
 import 'package:homeview/core/error/failure.dart';
 import 'package:homeview/core/model/job_data_model.dart';
 import 'package:homeview/core/model/rating_model.dart';
 import 'package:homeview/home/data/models/home_model/job_model.dart';
 import 'package:homeview/my_job/repos/my_job_repo.dart';
-
 import '../../core/service/api_service.dart';
 
 class MyJobRepoImpl implements MyJobRepo {
@@ -28,7 +29,7 @@ class MyJobRepoImpl implements MyJobRepo {
       token:
           'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImRlOGUwMTc0LWFmZGQtNDA3OS04NTYwLTkwNjk2MzVkMTNiOSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJ5b3VzZWYiLCJlbWFpbCI6InlvdXNlZkBnbWFpbC5jb20iLCJqdGkiOiI0ODI4NDRjOS1mMGQ4LTRkOGMtYjRjNS1lNGRlNjRmYjNlNGEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJNZW1iZXIiLCJleHAiOjE3NDc0ODg3ODgsImlzcyI6IlNoaWZ0U3dpZnQuQ29tIiwiYXVkIjoiU2hpZnRTd2lmdCJ9.U55sLk-Id60WPlsGOaFCrymmVIFbnoQy3V5G3I4zyMY',
     ); // Corrected the variable name
-
+  log(response.toString());
     List<dynamic> dataList = response['data'];
     List<JobDataModel> jobs =
         dataList.map((job) => JobDataModel.fromJson(job)).toList();
@@ -71,11 +72,11 @@ class MyJobRepoImpl implements MyJobRepo {
   @override
   Future<List<JobDataModel>> getAppliedJobs({required String memberId}) async{
      var response = await apiService.get(
-      endPoint: 'Member/GetAllAppliedJobs/$memberId',
+      endPoint: 'Member/GetAllMyJobApplications/$memberId',
       token:
           'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImRlOGUwMTc0LWFmZGQtNDA3OS04NTYwLTkwNjk2MzVkMTNiOSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJ5b3VzZWYiLCJlbWFpbCI6InlvdXNlZkBnbWFpbC5jb20iLCJqdGkiOiI0ODI4NDRjOS1mMGQ4LTRkOGMtYjRjNS1lNGRlNjRmYjNlNGEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJNZW1iZXIiLCJleHAiOjE3NDc0ODg3ODgsImlzcyI6IlNoaWZ0U3dpZnQuQ29tIiwiYXVkIjoiU2hpZnRTd2lmdCJ9.U55sLk-Id60WPlsGOaFCrymmVIFbnoQy3V5G3I4zyMY',
     ); // Corrected the variable name
-
+    log(response.toString());
     List<dynamic> dataList = response['data'];
     List<JobDataModel> jobs =
         dataList.map((job) => JobDataModel.fromJson(job)).toList();
