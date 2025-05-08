@@ -5,8 +5,10 @@ import 'package:homeview/core/error/failure.dart';
 import 'package:homeview/core/model/job_data_model.dart';
 import 'package:homeview/core/model/rating_model.dart';
 import 'package:homeview/home/data/models/home_model/job_model.dart';
+import 'package:homeview/home/presentation/view/widgets/ids.dart';
 import 'package:homeview/my_job/repos/my_job_repo.dart';
 import '../../core/service/api_service.dart';
+import '../model/applied_job_model.dart';
 
 class MyJobRepoImpl implements MyJobRepo {
   final ApiService apiService;
@@ -20,17 +22,15 @@ class MyJobRepoImpl implements MyJobRepo {
   }
 
   @override
-  Future<List<JobDataModel>> getAllJobs({
-    required String memberId,
-   
-  }) async {
+  Future<List<JobDataModel>> getAllJobs({required String memberId}) async {
     var response = await apiService.get(
       endPoint: 'Member/GetAllSavedJobs/$memberId',
       token:
-          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImRlOGUwMTc0LWFmZGQtNDA3OS04NTYwLTkwNjk2MzVkMTNiOSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJ5b3VzZWYiLCJlbWFpbCI6InlvdXNlZkBnbWFpbC5jb20iLCJqdGkiOiI0ODI4NDRjOS1mMGQ4LTRkOGMtYjRjNS1lNGRlNjRmYjNlNGEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJNZW1iZXIiLCJleHAiOjE3NDc0ODg3ODgsImlzcyI6IlNoaWZ0U3dpZnQuQ29tIiwiYXVkIjoiU2hpZnRTd2lmdCJ9.U55sLk-Id60WPlsGOaFCrymmVIFbnoQy3V5G3I4zyMY',
+          Ids.token,
     ); // Corrected the variable name
-  log(response.toString());
+    log(response.toString());
     List<dynamic> dataList = response['data'];
+    log(dataList.toString());
     List<JobDataModel> jobs =
         dataList.map((job) => JobDataModel.fromJson(job)).toList();
 
@@ -53,34 +53,26 @@ class MyJobRepoImpl implements MyJobRepo {
       return left(ServerFailure(errorMessage: e.toString()));
     }
   }
-  
-  @override
-  Future<Either<Failure, List<JobModel>>> getAllAppliedJob({required String memberId}) async{
-   try {
-      final jobsResult = await getAppliedJobs(memberId: memberId);
-      List<JobModel> mergedJobs = [];
-      for (var job in jobsResult) {
-        var rating = await getAllCompanyRating(companyId: job.companyId);
-        mergedJobs.add(JobModel(jobDataModel: job, ratingModel: rating));
-      }
-      return right(mergedJobs);
-    } on Exception catch (e) {
-      return left(ServerFailure(errorMessage: e.toString()));
-    }
-  }
-  
-  @override
-  Future<List<JobDataModel>> getAppliedJobs({required String memberId}) async{
-     var response = await apiService.get(
-      endPoint: 'Member/GetAllMyJobApplications/$memberId',
-      token:
-          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjUwZmI1OTg0LTlkYWUtNDg4ZS05YjZmLTFlOTBjNjk2ZmY2NSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJ5b3VzZWZmIiwiZW1haWwiOiJ5b3VzZWZmQGdtYWlsLmNvbSIsImp0aSI6ImQzN2VhZWI3LWJlMzMtNDE5Mi04MTRjLTExNWRlMGU4ZmRhOCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6Ik1lbWJlciIsImV4cCI6MTc0NzUxNjgwNSwiaXNzIjoiU2hpZnRTd2lmdC5Db20iLCJhdWQiOiJTaGlmdFN3aWZ0In0.Ab2_7pzxfj8019d8laDSJuXD-UFxcRzXb5zi10teva0',
-    ); // Corrected the variable name
-    log(response.toString());
-    List<dynamic> dataList = response['data'];
-    List<JobDataModel> jobs =
-        dataList.map((job) => JobDataModel.fromJson(job)).toList();
 
-    return (jobs);
+ 
+  
+
+  @override
+  Future<Either<Failure,List<AppliedJobModel>>> getAllAppliedJob({required String memberId}) async {
+    try {
+  var response = await apiService.get(
+    endPoint: 'Member/GetAllMyJobApplications/$memberId',
+    token:
+        Ids.token,
+  ); // Corrected the variable name
+  log(response.toString());
+  List<dynamic> dataList = response['data'];
+  List<AppliedJobModel> jobs =
+      dataList.map((job) => AppliedJobModel.fromJson(job)).toList();
+  
+  return right(jobs);
+} on Exception catch (e) {
+  return left(ServerFailure(errorMessage: e.toString()));
+}
   }
 }

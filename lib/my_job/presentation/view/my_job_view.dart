@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:homeview/my_job/presentation/manager/aplied_job_cubit.dart';
 import 'package:homeview/my_job/presentation/manager/my_job_cubit.dart';
 import 'package:homeview/my_job/repos/my_job_repo_impl.dart';
 import '../../../core/service/service_locator.dart';
+import '../../../home/presentation/view/widgets/ids.dart';
 import '../../function/my_job_app_bar.dart';
-import '../manager/aplied_job_cubit.dart';
 import 'widgets/my_job_view_body.dart';
 
 class MyJobView extends StatelessWidget {
@@ -14,11 +15,17 @@ class MyJobView extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider<MyJobCubit>(
-          create: (context) => MyJobCubit(getIt<MyJobRepoImpl>())..getAllJob(memberId: 'de8e0174-afdd-4079-8560-9069635d13b9'),
+        BlocProvider(
+          create:
+              (context) =>
+                  MyJobCubit(getIt.get<MyJobRepoImpl>())
+                    ..getAllJob(memberId: Ids.memberId),
         ),
-        BlocProvider<ApliedJobCubit>(
-          create: (context) => ApliedJobCubit(getIt<MyJobRepoImpl>())..getAllAppliedJob(memberId: '50fb5984-9dae-488e-9b6f-1e90c696ff65'),
+        BlocProvider(
+          create:
+              (context) =>
+                  ApliedJobCubit(getIt.get<MyJobRepoImpl>())
+                    ..getAllAppliedJob(memberId: Ids.memberId),
         ),
       ],
       child: Scaffold(appBar: buildMyJobAppBar(context), body: MyJobViewBody()),

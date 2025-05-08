@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:homeview/home/presentation/view/widgets/home_view_item.dart';
@@ -35,6 +37,7 @@ class SavedView extends StatelessWidget {
         } else if (state is MyJobFailure) {
           return Center(child: Text(state.errorMessage));
         } else {
+          log("here");
           return Center(child: CircularProgressIndicator());
         }
       },

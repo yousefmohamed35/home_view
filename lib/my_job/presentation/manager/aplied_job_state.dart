@@ -1,4 +1,5 @@
-import '../../../home/data/models/home_model/job_model.dart';
+import '../../model/applied_job_model.dart';
+
 
 abstract class AppliedJobState {}
 
@@ -6,7 +7,7 @@ class AppliedJobInitial extends AppliedJobState {}
 
 class AppliedJobLoading extends AppliedJobState {}
 class AppliedJobSuccess extends AppliedJobState {
-  final List<JobModel> jobs;
+  final List<AppliedJobModel> jobs;
   AppliedJobSuccess({required this.jobs});
 }
 

@@ -6,11 +6,11 @@ import '../../home/data/extension/salary_type_extension.dart';
 class JobDataModel {
   final String id;
   final String companyId;
-  final String companyName;
+  final String? companyName;
   final String title;
   final String description;
   final String location;
-  final DateTime postedOn;
+  final DateTime? postedOn;
   final SalaryType salaryTypeId;
   final double salary;
   final JobType jobTypeTd;
@@ -18,11 +18,11 @@ class JobDataModel {
   factory JobDataModel.fromJson(Map<String, dynamic> json) => JobDataModel(
     id: json['id'],
     companyId: json['companyId'],
-    companyName: json['companyName'],
+    companyName: json['companyName'] ?? "Unkown",
     title: json['title'],
     description: json['description'],
     location: json['location'],
-    postedOn: DateTime.parse(json['postedOn'] as String),
+    postedOn: DateTime.parse(json['postedOn'] ?? json['savedOn'] as String),
     salaryTypeId: SalaryTypeExtension.fromId(json['salaryTypeId']),
     salary: json['salary'],
     jobTypeTd: JobTypeExtension.fromId(json['jobTypeTd']),
@@ -40,17 +40,4 @@ class JobDataModel {
     required this.salary,
     required this.jobTypeTd,
   });
-
-  Map<String, dynamic> toJson() => {
-    'id': id,
-    'companyId': companyId,
-    'companyName': companyName,
-    'title': title,
-    'description': description,
-    'location': location,
-    'postedOn': postedOn.toIso8601String(),
-    'salaryTypeId': salaryTypeId,
-    'salary': salary,
-    'jobTypeTd': jobTypeTd,
-  };
 }
