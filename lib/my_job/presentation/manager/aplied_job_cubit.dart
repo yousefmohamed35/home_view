@@ -1,5 +1,4 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../repos/my_job_repo.dart';
 import 'aplied_job_state.dart';
 

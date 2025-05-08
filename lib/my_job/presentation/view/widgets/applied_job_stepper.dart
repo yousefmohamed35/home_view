@@ -14,7 +14,7 @@ class AppliedJobStepper extends StatefulWidget {
 int activeStep = 1;
 List<String> titles = [
   'Application Sent',
-  'Application viewed by recruiter',
+  'Application viewed',
   'Application Shortlisted',
 ];
 
