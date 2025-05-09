@@ -25,10 +25,50 @@ class HomeViewCubit extends Cubit<HomeViewState> {
     );
   }
 
+  void filtter({String? sortBy, double min = 0, double max = 0}) {
+    filteredJobs = allJobs;
+    filteredJobs =
+        filteredJobs.where((job) {
+          final salary = job.jobDataModel.salary;
+          return salary >= min;
+        }).toList();
+    filteredJobs =
+        filteredJobs.where((job) {
+          final salary = job.jobDataModel.salary;
+          return max == 0 ? salary >= max : salary <= max;
+        }).toList();
+    if (sortBy == 'Latest') {
+      filteredJobs.sort(
+        (a, b) => b.jobDataModel.postedOn!.compareTo(a.jobDataModel.postedOn!),
+      );
+    } else if (sortBy == 'Oldest') {
+      filteredJobs.sort(
+        (a, b) => a.jobDataModel.postedOn!.compareTo(b.jobDataModel.postedOn!),
+      );
+    } else if (sortBy == 'Full Time' ||
+        sortBy == 'Part Time' ||
+        sortBy == 'Freelance') {
+      filteredJobs =
+          filteredJobs
+              .where(
+                (job) =>
+                    job.jobDataModel.jobTypeTd.toLowerCase() ==
+                    sortBy!.toLowerCase(),
+              )
+              .toList();
+    } else {
+      filteredJobs = filteredJobs;
+    }
+    emit(HomeViewSuccess(jobs: filteredJobs));
+  }
+
   void search(String query) {
-     final filteredJobs = allJobs.where((job) {
-        return job.jobDataModel.title.toLowerCase().contains(query.toLowerCase());
-      }).toList();
+    final filteredJobs =
+        allJobs.where((job) {
+          return job.jobDataModel.title.toLowerCase().contains(
+            query.toLowerCase(),
+          );
+        }).toList();
     emit(HomeViewSuccess(jobs: filteredJobs));
   }
 }

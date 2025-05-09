@@ -38,8 +38,8 @@ class SortBySection extends StatelessWidget {
             ),
             SizedBox(width: 8),
             FilterButton(
-              text: 'Distance',
-              value: 'Distance',
+              text: 'Full Time',
+              value: 'Full Time',
               selectedValue: sortBy,
               onPressed: (value) => onSortChanged(value),
             ),

@@ -3,7 +3,6 @@ import 'package:homeview/core/app_colors.dart';
 import 'package:homeview/search/presentation/view/widgets/sort_by_section.dart';
 import 'package:homeview/search/presentation/view/widgets/job_type_section.dart';
 import 'package:homeview/search/presentation/view/widgets/salary_section.dart';
-import 'package:homeview/search/presentation/view/widgets/area_section.dart';
 
 class FilterView extends StatefulWidget {
   const FilterView({super.key});
@@ -15,7 +14,6 @@ class FilterView extends StatefulWidget {
 
 class _FilterPageState extends State<FilterView> {
   String sortBy = 'Latest';
-  String jobType = 'Full Time';
   String area = 'Choose';
   double minSalary = 0;
   double maxSalary = 0;
@@ -69,14 +67,7 @@ class _FilterPageState extends State<FilterView> {
 
               // Section: Area
               SizedBox(height: 16),
-              AreaSection(
-                area: area,
-                onAreaChanged:
-                    (value) => setState(() => area = value ?? 'Choose'),
-              ),
 
-              // Button: Show Results
-              SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
                   // Show results logic here

@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:homeview/core/app_colors.dart';
 import 'package:homeview/home/data/models/home_model/job_model.dart';
@@ -20,7 +18,6 @@ class SearchHistoryList extends StatelessWidget {
     return ListView.builder(
       itemCount: searchHistory.length,
       itemBuilder: (context, index) {
-        log(searchHistory[0].jobDataModel.title);
         return ListTile(
           onTap: () {
             

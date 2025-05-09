@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:homeview/core/app_colors.dart';
@@ -48,9 +46,8 @@ class _SearchPageState extends State<SearchView> {
                 builder: (context, state) {
                   if (state is HomeViewSuccess) {
                     final jobs = state.jobs;
-                    log(jobs.length.toString());
+                   
                     if (jobs.isEmpty) {
-                      log(jobs.length.toString());
                       return const Center(child: Text('No Job Found'));
                     }
                     return searchController.text.isEmpty

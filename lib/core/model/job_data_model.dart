@@ -1,4 +1,3 @@
-import '../../home/data/enums/job_type.dart';
 import '../../home/data/enums/salary_type.dart';
 import '../../home/data/extension/job_type_extension.dart';
 import '../../home/data/extension/salary_type_extension.dart';
@@ -13,7 +12,7 @@ class JobDataModel {
   final DateTime? postedOn;
   final SalaryType salaryTypeId;
   final double salary;
-  final JobType jobTypeTd;
+  final String jobTypeTd;
 
   factory JobDataModel.fromJson(Map<String, dynamic> json) => JobDataModel(
     id: json['id'],
@@ -25,7 +24,7 @@ class JobDataModel {
     postedOn: DateTime.parse(json['postedOn'] ?? json['savedOn'] as String),
     salaryTypeId: SalaryTypeExtension.fromId(json['salaryTypeId']),
     salary: json['salary'],
-    jobTypeTd: JobTypeExtension.fromId(json['jobTypeTd']),
+    jobTypeTd: JobTypeExtension.fromId(json['jobTypeTd']).name,
   );
 
   JobDataModel({

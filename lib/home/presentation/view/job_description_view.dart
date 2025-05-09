@@ -43,7 +43,7 @@ class JobDescriptionView extends StatelessWidget {
               location: job.location,
               salary: job.salary.toStringAsFixed(0),
               salaryType: job.salaryTypeId.name,
-              jobType: job.jobTypeTd.name,
+              jobType: job.jobTypeTd,
             ),
             SizedBox(height: 8),
             ReviewsHeader(onViewAllPressed: () {}),
