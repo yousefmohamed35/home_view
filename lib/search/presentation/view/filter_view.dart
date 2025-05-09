@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:homeview/core/app_colors.dart';
+import 'package:homeview/home/presentation/manager/home_view_cubit.dart';
 import 'package:homeview/search/presentation/view/widgets/sort_by_section.dart';
 import 'package:homeview/search/presentation/view/widgets/job_type_section.dart';
 import 'package:homeview/search/presentation/view/widgets/salary_section.dart';
@@ -70,7 +72,12 @@ class _FilterPageState extends State<FilterView> {
 
               ElevatedButton(
                 onPressed: () {
-                  // Show results logic here
+                  context.read<HomeViewCubit>().filtter(
+                    sortBy: sortBy,
+                    min: minSalary,
+                    max: maxSalary,
+                  );
+                  Navigator.of(context).popUntil((route) => route.isFirst);
                 },
                 style: ButtonStyle(
                   backgroundColor: WidgetStateProperty.all(AppColors.blue),
