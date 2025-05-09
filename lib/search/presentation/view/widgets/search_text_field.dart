@@ -1,5 +1,10 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:homeview/core/app_colors.dart';
+
+import '../../../../home/presentation/manager/home_view_cubit.dart';
 
 class SearchTextField extends StatelessWidget {
   final TextEditingController controller;
@@ -15,6 +20,10 @@ class SearchTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       controller: controller,
+      onChanged: (value) {
+        log(value);
+        context.read<HomeViewCubit>().search(value);
+      },
       decoration: InputDecoration(
         prefixIcon: Icon(Icons.search, color: AppColors.borderColor),
         suffixIcon: GestureDetector(

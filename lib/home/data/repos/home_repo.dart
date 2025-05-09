@@ -1,7 +1,14 @@
 import 'package:dartz/dartz.dart';
 import 'package:homeview/core/error/failure.dart';
-import 'package:homeview/home/data/models/home_model.dart';
+import '../../../core/model/job_data_model.dart';
+import '../models/home_model/job_added_model.dart';
+import '../models/home_model/job_model.dart';
+import '../../../core/model/rating_model.dart';
 
 abstract class HomeRepo {
- Future<Either<Failure,List<HomeModel>>> getAllJopPosts();
+  Future<List<JobDataModel>> getAllJopPosts();
+  Future<RatingModel> getAllCompanyRating({required String companyId});
+  Future<Either<Failure, List<JobModel>>> getAllJob();
+  Future<Either<Failure, JobAddedModel>> addSavedJobs({required String jobId,required String memberId});
+  Future<Either<Failure, JobAddedModel>> addAppliedJob({required Map<String, dynamic> body});
 }

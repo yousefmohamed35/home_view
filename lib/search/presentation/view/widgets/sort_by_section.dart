@@ -16,7 +16,10 @@ class SortBySection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('Sort by', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+        Text(
+          'Sort by',
+          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+        ),
         SizedBox(height: 8),
         Row(
           children: [
@@ -35,8 +38,8 @@ class SortBySection extends StatelessWidget {
             ),
             SizedBox(width: 8),
             FilterButton(
-              text: 'Distance',
-              value: 'Distance',
+              text: 'Full Time',
+              value: 'Full Time',
               selectedValue: sortBy,
               onPressed: (value) => onSortChanged(value),
             ),

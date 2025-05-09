@@ -21,11 +21,11 @@ class FilterButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: () => onPressed(value),
         style: ButtonStyle(
-          backgroundColor: WidgetStateProperty.resolveWith<Color>(
-            (Set<WidgetState> states) {
-              return selectedValue == value ? AppColors.blue : AppColors.main;
-            },
-          ),
+          backgroundColor: WidgetStateProperty.resolveWith<Color>((
+            Set<WidgetState> states,
+          ) {
+            return selectedValue == value ? AppColors.blue : AppColors.main;
+          }),
         ),
         child: Text(
           text,

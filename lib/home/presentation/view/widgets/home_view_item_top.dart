@@ -7,8 +7,13 @@ import 'title_widget.dart';
 import 'trending_now_item.dart';
 
 class HomeViewItemTop extends StatelessWidget {
-  const HomeViewItemTop({super.key, required this.title});
+  const HomeViewItemTop({
+    super.key,
+    required this.title,
+    required this.companyName,
+  });
   final String title;
+  final String companyName;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -20,7 +25,7 @@ class HomeViewItemTop extends StatelessWidget {
             TrendingNowItem(),
             TitleWidget(text: title),
             Text(
-              'Rog Web',
+              companyName,
               style: GoogleFonts.lato(textStyle: AppStyles.regular14),
             ),
           ],

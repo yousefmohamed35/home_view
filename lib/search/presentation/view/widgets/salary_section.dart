@@ -26,7 +26,10 @@ class _SalarySectionState extends State<SalarySection> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('Salary', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+        Text(
+          'Salary',
+          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+        ),
         SizedBox(height: 8),
         Row(
           children: [
