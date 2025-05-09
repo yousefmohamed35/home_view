@@ -7,6 +7,8 @@ part 'home_view_state.dart';
 class HomeViewCubit extends Cubit<HomeViewState> {
   HomeViewCubit(this.homeRepo) : super(HomeViewInitial());
   final HomeRepo homeRepo;
+  List<JobModel> allJobs = []; // كل الوظائف الأصلية
+  List<JobModel> filteredJobs = [];
   Future<void> getAllJob() async {
     emit(HomeViewLoading());
     var result = await homeRepo.getAllJob();
@@ -16,8 +18,17 @@ class HomeViewCubit extends Cubit<HomeViewState> {
         emit(HomeViewFailure(errorMessage: fail.errorMessage));
       },
       (jobs) {
-        emit(HomeViewSuccess(jobs: jobs));
+        allJobs = jobs;
+        filteredJobs = jobs;
+        emit(HomeViewSuccess(jobs: filteredJobs));
       },
     );
+  }
+
+  void search(String query) {
+     final filteredJobs = allJobs.where((job) {
+        return job.jobDataModel.title.toLowerCase().contains(query.toLowerCase());
+      }).toList();
+    emit(HomeViewSuccess(jobs: filteredJobs));
   }
 }
