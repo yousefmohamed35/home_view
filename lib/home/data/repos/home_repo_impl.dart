@@ -16,7 +16,8 @@ class HomeRepoImpl implements HomeRepo {
   @override
   Future<List<JobDataModel>> getAllJopPosts() async {
     var response = await apiService.get(
-      endPoint: 'Home/GetRandomJobs',
+      endPoint:
+          'Home/GetRandomJobs?PageNumber=1&PageSize=10&SortBy=JobType&SortOrder=asc&JobTypeIdFilterValue=0&SalaryTypeIdFilterValue=0',
     ); // Corrected the variable name
 
     List<dynamic> dataList = response['data']['data'];
@@ -28,7 +29,9 @@ class HomeRepoImpl implements HomeRepo {
 
   @override
   Future<RatingModel> getAllCompanyRating({required String companyId}) async {
-    var data = await apiService.get(endPoint: 'Company/GetRating/$companyId');
+    var data = await apiService.get(
+      endPoint: 'Company/GetRating?companyId=$companyId',
+    );
     RatingModel rating = RatingModel.fromJson(data['data']);
     return rating;
   }
