@@ -46,7 +46,7 @@ class _SearchPageState extends State<SearchView> {
                 builder: (context, state) {
                   if (state is HomeViewSuccess) {
                     final jobs = state.jobs;
-                   
+
                     if (jobs.isEmpty) {
                       return const Center(child: Text('No Job Found'));
                     }
@@ -70,7 +70,7 @@ class _SearchPageState extends State<SearchView> {
                                   ),
                                   onTap: () {
                                     searchHistory.add(jobs[index]);
-                                    
+
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(

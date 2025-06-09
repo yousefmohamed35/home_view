@@ -56,8 +56,7 @@ class HomeRepoImpl implements HomeRepo {
     try {
       var response = await apiService.post(
         endPoint: 'Member/SaveJob?JobId=$jobId&MemberId=$memberId',
-        token:
-           Ids.token,
+        token: Ids.token,
       );
 
       JobAddedModel saveJob = JobAddedModel.fromJson(response);
@@ -68,12 +67,13 @@ class HomeRepoImpl implements HomeRepo {
   }
 
   @override
-  Future<Either<Failure, JobAddedModel>> addAppliedJob({required Map<String, dynamic> body}) async {
+  Future<Either<Failure, JobAddedModel>> addAppliedJob({
+    required Map<String, dynamic> body,
+  }) async {
     try {
       var response = await apiService.post(
         endPoint: 'Member/AddJobApplication',
-        token:
-           Ids.token,
+        token: Ids.token,
         body: body,
       );
       JobAddedModel applyJob = JobAddedModel.fromJson(response);

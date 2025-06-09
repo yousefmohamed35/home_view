@@ -17,7 +17,7 @@ class AppliedJobModel {
       title: json['title'],
       description: json['description'],
       location: json['location'],
-       postedOn: DateTime.parse(json['postedOn'] as String),
+      postedOn: DateTime.parse(json['postedOn'] as String),
     );
   }
 }

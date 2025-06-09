@@ -29,10 +29,9 @@ class SavedBlocConsumerButton extends StatelessWidget {
           text: 'Save',
           isIcon: true,
           onTap: () {
-            BlocProvider.of<Addedjobcubit>(context).savedJob(
-              jobId: jobId,
-              memberId: Ids.memberId,
-            );
+            BlocProvider.of<Addedjobcubit>(
+              context,
+            ).savedJob(jobId: jobId, memberId: Ids.memberId);
           },
         );
       },

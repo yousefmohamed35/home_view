@@ -12,4 +12,5 @@ void setupServiceLocator() {
   getIt.registerSingleton<MyJobRepoImpl>(
     MyJobRepoImpl(apiService: getIt.get<ApiService>()),
   );
+
 }

@@ -22,6 +22,7 @@ class Addedjobcubit extends Cubit<AddedjobState> {
       },
     );
   }
+
   Future<void> appliedJob({required Map<String, dynamic> body}) async {
     emit(AddedjobcubitLoading());
     var result = await homeRepo.addAppliedJob(body: body);

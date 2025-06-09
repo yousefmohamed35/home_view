@@ -23,7 +23,7 @@ class AppliedViewBody extends StatelessWidget {
                   children: List.generate(state.jobs.length, (index) {
                     return Padding(
                       padding: const EdgeInsets.only(bottom: 16),
-                      child: AppliedJobItem(appliedJobModel: state.jobs[index],),
+                      child: AppliedJobItem(appliedJobModel: state.jobs[index]),
                     );
                   }),
                 ),

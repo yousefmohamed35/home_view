@@ -9,7 +9,7 @@ class ApliedJobCubit extends Cubit<AppliedJobState> {
   Future<void> getAllAppliedJob({required String memberId}) async {
     emit(AppliedJobLoading());
     var result = await myJobRepo.getAllAppliedJob(memberId: memberId);
-    
+
     result.fold(
       (fail) {
         emit(AppliedJobFailure(errorMessage: fail.errorMessage));

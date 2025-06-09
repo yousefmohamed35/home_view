@@ -6,12 +6,14 @@ class ApiService {
 
   ApiService(this._dio);
 
-  Future<Map<String, dynamic>> get({required String endPoint,String? token}) async {
-    var response = await _dio.get('$_baseUrl$endPoint',options: Options(
-      headers: {
-        'Authorization':'Bearer $token'
-      }
-    ));
+  Future<Map<String, dynamic>> get({
+    required String endPoint,
+    String? token,
+  }) async {
+    var response = await _dio.get(
+      '$_baseUrl$endPoint',
+      options: Options(headers: {'Authorization': 'Bearer $token'}),
+    );
     return response.data;
   }
 
@@ -23,10 +25,7 @@ class ApiService {
     var response = await _dio.post(
       '$_baseUrl$endPoint',
       data: body,
-      options: Options(
-        
-        headers: {'Authorization': 'Bearer $token'},
-      ),
+      options: Options(headers: {'Authorization': 'Bearer $token'}),
     );
     return response.data;
   }
